@@ -1,0 +1,532 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="dad0ab66-a947-4306-b1c4-5958864e97eb" name="Changes" comment="updated">
+      <change afterPath="$PROJECT_DIR$/src/main/java/application/handlers/CardHandler.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/application/handlers/GameHandler.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/application/handlers/PackageHandler.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/application/handlers/ScoreboardHandler.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/application/handlers/StatsHandler.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/application/handlers/TradingHandler.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/application/handlers/TransactionHandler.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/application/handlers/UserSessionHandler.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/domain/enums/TradeState.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/domain/models/Trade.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/domain/services/TradeService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/persistence/repositories/GameRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/persistence/repositories/TradeRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/tests/services/DeckServiceTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/tests/services/PackageServiceTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/tests/services/UserServiceTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/MCTG.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/MCTG.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/mctg.log" beforeDir="false" afterPath="$PROJECT_DIR$/logs/mctg.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/enums/ElementType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/domain/enums/ElementType.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/enums/MonsterType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/domain/enums/MonsterType.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/enums/SpellType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/domain/enums/SpellType.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/exceptions/JsonParseException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/application/exceptions/JsonParseException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/handlers/BattleHandler.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/handlers/CardHandler.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/handlers/DeckHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/application/handlers/DeckHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/handlers/PackageHandler.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/handlers/RequestHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/application/handlers/RequestHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/handlers/ScoreboardHandler.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/handlers/StatsHandler.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/handlers/TradingHandler.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/handlers/TransactionHandler.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/handlers/UserActionHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/application/handlers/UserActionHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/handlers/UserSessionHandler.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/http/HTTPRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/presentation/http/HTTPRequest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/http/HTTPResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/presentation/http/HTTPResponse.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/http/HTTPRouter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/presentation/http/HTTPRouter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/interfaces/RequestHandleable.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/application/interfaces/RequestHandleable.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/json/JSONParser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/utils/json/JSONParser.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/main/DatabaseManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/persistence/db/DatabaseManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/main/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/main/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/mapper/ObjectMapper.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/models/Battle.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/models/Card.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/domain/models/Card.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/models/Deck.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/domain/models/Deck.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/models/Package.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/domain/models/Package.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/models/Token.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/domain/models/Token.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/models/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/domain/models/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/models/UserProperties.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/domain/models/UserProperties.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/repositories/CardRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/persistence/repositories/CardRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/repositories/GameRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/repositories/PackageRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/persistence/repositories/PackageRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/repositories/UserRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/persistence/repositories/UserRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/server/Server.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/presentation/server/Server.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/services/BattleService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/domain/services/GameService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/services/CardService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/domain/services/CardService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/services/DeckService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/domain/services/DeckService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/services/PackageService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/domain/services/PackageService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/services/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/domain/services/UserService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/enums/ElementType.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/enums/MonsterType.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/enums/SpellType.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/handlers/BattleHandler.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/handlers/CardHandler.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/handlers/DeckHandler.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/handlers/PackageHandler.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/handlers/ScoreboardHandler.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/handlers/StatsHandler.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/handlers/TradingHandler.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/handlers/UserActionHandler.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/handlers/UserSessionHandler.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/http/HTTPRequest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/http/HTTPResponse.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/http/HTTPRouter.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/interfaces/RequestHandleable.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/main/DatabaseManager.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/main/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/main/Main.class" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Interface" />
+        <option value="JUnit4 Test Class" />
+        <option value="Exception" />
+        <option value="Class" />
+        <option value="Enum" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="develope" />
+      </map>
+    </option>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;JakobPronebner04&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/JakobPronebner04/MCTG.git&quot;,
+    &quot;accountId&quot;: &quot;457489bd-a4dd-470c-a30a-2bdaf75c7525&quot;
+  }
+}</component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="importingSettings">
+      <MavenImportingSettings>
+        <option name="jdkForImporter" value="openjdk-22" />
+      </MavenImportingSettings>
+    </option>
+  </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 3
+}</component>
+  <component name="ProjectId" id="2lzAoDkINEM8DSuU270csj42JSU" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="showLibraryContents" value="true" />
+    <option name="sortByType" value="true" />
+    <option name="sortKey" value="BY_TYPE" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Application.Main.executor&quot;: &quot;Run&quot;,
+    &quot;Downloaded.Files.Path.Enabled&quot;: &quot;false&quot;,
+    &quot;JUnit.AddPackageTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.AddPackageTest.testAddPackage_Success.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.CardServiceTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.DeckServiceTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.UserServiceTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.UserServiceTest.testLogin_Failure_UserNotFound.executor&quot;: &quot;Debug&quot;,
+    &quot;Repository.Attach.Annotations&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.JavaDocs&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.Sources&quot;: &quot;false&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary&quot;: &quot;JUnit4&quot;,
+    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit4&quot;: &quot;&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_directory_selection&quot;: &quot;C:/FH/Java/MCTG/src/test/java/services&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/FH/Java/MCTG&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;onboarding.tips.debug.path&quot;: &quot;C:/Users/Jakob Pronebner/IdeaProjects/MCTG/src/main/java/Main.java&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;project.scopes&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  },
+  &quot;keyToStringList&quot;: {
+    &quot;DatabaseDriversLRU&quot;: [
+      &quot;postgresql&quot;
+    ]
+  }
+}</component>
+  <component name="RecentsManager">
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="handlers" />
+    </key>
+    <key name="CreateTestDialog.Recents.Supers">
+      <recent name="" />
+    </key>
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="" />
+    </key>
+    <key name="CreateTestDialog.RecentsKey">
+      <recent name="services" />
+      <recent name="main" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="AddPackageTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="MCTG" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="services.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="services" />
+      <option name="MAIN_CLASS_NAME" value="services.AddPackageTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="AddPackageTest.testAddPackage_Success" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="MCTG" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="services.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="services" />
+      <option name="MAIN_CLASS_NAME" value="services.AddPackageTest" />
+      <option name="METHOD_NAME" value="testAddPackage_Success" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="CardServiceTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="MCTG" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="services.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="services" />
+      <option name="MAIN_CLASS_NAME" value="services.CardServiceTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="DeckServiceTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="MCTG" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="services.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="services" />
+      <option name="MAIN_CLASS_NAME" value="services.DeckServiceTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="UserServiceTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="MCTG" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="services.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="services" />
+      <option name="MAIN_CLASS_NAME" value="services.UserServiceTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JUnit.AddPackageTest" />
+        <item itemvalue="JUnit.DeckServiceTest" />
+        <item itemvalue="JUnit.UserServiceTest" />
+        <item itemvalue="JUnit.CardServiceTest" />
+        <item itemvalue="JUnit.AddPackageTest.testAddPackage_Success" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SQLScriptSettings">
+    <option name="matrix">
+      <map>
+        <entry key="POSTGRES.CreateComplete" value="CreateIfNotExists=1" />
+      </map>
+    </option>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-jdk-9823dce3aa75-fdfe4dae3a2d-intellij.indexing.shared.core-IU-243.22562.218" />
+        <option value="bundled-js-predefined-d6986cc7102b-deb605915726-JavaScript-IU-243.22562.218" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="dad0ab66-a947-4306-b1c4-5958864e97eb" name="Changes" comment="" />
+      <created>1726172704883</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1726172704883</updated>
+      <workItem from="1726172706535" duration="861000" />
+      <workItem from="1726216996177" duration="14890000" />
+      <workItem from="1726256295962" duration="366000" />
+      <workItem from="1726334503738" duration="4257000" />
+      <workItem from="1726348054547" duration="3352000" />
+      <workItem from="1726390473409" duration="1974000" />
+      <workItem from="1726398032419" duration="4375000" />
+      <workItem from="1726409112532" duration="661000" />
+      <workItem from="1726409785042" duration="226000" />
+      <workItem from="1726410023844" duration="2308000" />
+      <workItem from="1726412573194" duration="777000" />
+      <workItem from="1726413371351" duration="2201000" />
+      <workItem from="1726418872114" duration="4351000" />
+      <workItem from="1726497309492" duration="475000" />
+      <workItem from="1726504872844" duration="9354000" />
+      <workItem from="1726574923586" duration="5902000" />
+      <workItem from="1726597827764" duration="1727000" />
+      <workItem from="1726640377904" duration="2317000" />
+      <workItem from="1726653145888" duration="1589000" />
+      <workItem from="1726668833567" duration="6816000" />
+      <workItem from="1726737354591" duration="2887000" />
+      <workItem from="1726742220945" duration="2430000" />
+      <workItem from="1726746299727" duration="677000" />
+      <workItem from="1726749150212" duration="1286000" />
+      <workItem from="1726754934599" duration="3311000" />
+      <workItem from="1726758262296" duration="1288000" />
+      <workItem from="1726777875696" duration="2258000" />
+      <workItem from="1726781866079" duration="978000" />
+      <workItem from="1726826675951" duration="1598000" />
+      <workItem from="1726863745431" duration="696000" />
+      <workItem from="1727523528681" duration="209000" />
+      <workItem from="1727526552058" duration="312000" />
+      <workItem from="1727526871479" duration="1101000" />
+      <workItem from="1727624606775" duration="7200000" />
+      <workItem from="1727636638065" duration="2736000" />
+      <workItem from="1727879424310" duration="3404000" />
+      <workItem from="1728056078533" duration="146000" />
+      <workItem from="1728056255466" duration="595000" />
+      <workItem from="1728468128002" duration="481000" />
+      <workItem from="1728569826923" duration="1997000" />
+      <workItem from="1728572202304" duration="1082000" />
+      <workItem from="1728573304351" duration="150000" />
+      <workItem from="1728657227952" duration="1273000" />
+      <workItem from="1728979381384" duration="1605000" />
+      <workItem from="1729080926633" duration="1051000" />
+      <workItem from="1729089910350" duration="531000" />
+      <workItem from="1729090560403" duration="1896000" />
+      <workItem from="1729092879092" duration="747000" />
+      <workItem from="1729175016633" duration="1303000" />
+      <workItem from="1729176474278" duration="28000" />
+      <workItem from="1729693415596" duration="664000" />
+      <workItem from="1729695973359" duration="527000" />
+      <workItem from="1729848679392" duration="2000" />
+      <workItem from="1730993473845" duration="1989000" />
+      <workItem from="1730995558082" duration="1332000" />
+      <workItem from="1731074791505" duration="285000" />
+      <workItem from="1731075092415" duration="898000" />
+      <workItem from="1731076005434" duration="1519000" />
+      <workItem from="1732218413740" duration="3000" />
+      <workItem from="1733477717906" duration="797000" />
+      <workItem from="1733479594004" duration="980000" />
+      <workItem from="1733482206723" duration="961000" />
+      <workItem from="1734178297243" duration="23816000" />
+      <workItem from="1734257420380" duration="2831000" />
+      <workItem from="1734305733143" duration="654000" />
+      <workItem from="1734538660711" duration="2646000" />
+      <workItem from="1735106526122" duration="1097000" />
+      <workItem from="1735107641983" duration="1064000" />
+      <workItem from="1735227372061" duration="1796000" />
+      <workItem from="1735641059532" duration="1357000" />
+      <workItem from="1735642829753" duration="746000" />
+      <workItem from="1735740326807" duration="11742000" />
+      <workItem from="1735764657399" duration="4155000" />
+      <workItem from="1735810397699" duration="412000" />
+      <workItem from="1735810828238" duration="10489000" />
+      <workItem from="1735839110389" duration="5096000" />
+      <workItem from="1735845577589" duration="154000" />
+      <workItem from="1735845796395" duration="9000" />
+      <workItem from="1735849378340" duration="2010000" />
+      <workItem from="1735858576610" duration="544000" />
+      <workItem from="1735887532560" duration="6606000" />
+      <workItem from="1735903578625" duration="75000" />
+      <workItem from="1735934898134" duration="64000" />
+      <workItem from="1736066839964" duration="38781000" />
+      <workItem from="1736109414801" duration="1592000" />
+      <workItem from="1736154528632" duration="7409000" />
+      <workItem from="1736164726379" duration="26000" />
+      <workItem from="1736164772278" duration="3000" />
+      <workItem from="1736164805438" duration="2076000" />
+      <workItem from="1736172363196" duration="355000" />
+      <workItem from="1736180816846" duration="294000" />
+      <workItem from="1736289480550" duration="2863000" />
+      <workItem from="1736339695975" duration="1828000" />
+      <workItem from="1736358053416" duration="2220000" />
+      <workItem from="1736360355631" duration="2991000" />
+      <workItem from="1736369204731" duration="3635000" />
+      <workItem from="1736378313434" duration="32000" />
+      <workItem from="1736414874027" duration="3027000" />
+      <workItem from="1736419703129" duration="5538000" />
+      <workItem from="1736472051029" duration="153000" />
+      <workItem from="1736705380685" duration="4455000" />
+      <workItem from="1736713225279" duration="2276000" />
+      <workItem from="1736762319507" duration="2367000" />
+    </task>
+    <task id="LOCAL-00001" summary="changed jackson dependencie">
+      <option name="closed" value="true" />
+      <created>1727527032329</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1727527032329</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Added user register layers(business and data access)">
+      <option name="closed" value="true" />
+      <created>1727630033936</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1727630033936</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Changed user register (added optional instead of null returnstatement)">
+      <option name="closed" value="true" />
+      <created>1727636712967</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1727636712967</updated>
+    </task>
+    <task id="LOCAL-00004" summary="init userLogin">
+      <option name="closed" value="true" />
+      <created>1727637063190</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1727637063190</updated>
+    </task>
+    <task id="LOCAL-00005" summary="changed Data-Access-Layer in UserService (login and register method)">
+      <option name="closed" value="true" />
+      <created>1728056160125</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1728056160125</updated>
+    </task>
+    <task id="LOCAL-00006" summary="added RequestHandler instead of directly putting thread in server class, added ThreadPool">
+      <option name="closed" value="true" />
+      <created>1728980983600</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1728980983600</updated>
+    </task>
+    <task id="LOCAL-00007" summary="Add UserRepository, reinit">
+      <option name="closed" value="true" />
+      <created>1733479954798</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1733479954798</updated>
+    </task>
+    <task id="LOCAL-00008" summary="updated">
+      <option name="closed" value="true" />
+      <created>1736093977783</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1736093977783</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="HEAD" />
+                        <option value="master" />
+                        <option value="origin/master" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <ignored-roots>
+      <path value="$PROJECT_DIR$" />
+    </ignored-roots>
+    <MESSAGE value="changed jackson dependencie" />
+    <MESSAGE value="Added user register layers(business and data access)" />
+    <MESSAGE value="Changed user register (added optional instead of null returnstatement)" />
+    <MESSAGE value="init userLogin" />
+    <MESSAGE value="changed Data-Access-Layer in UserService (login and register method)" />
+    <MESSAGE value="added RequestHandler instead of directly putting thread in server class, added ThreadPool" />
+    <MESSAGE value="Add UserRepository, reinit" />
+    <MESSAGE value="created packagehandler logic" />
+    <MESSAGE value="updated" />
+    <option name="LAST_COMMIT_MESSAGE" value="updated" />
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
+  </component>
+</project>
