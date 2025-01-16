@@ -22,7 +22,6 @@ public class PackageService
     }
     public HTTPResponse addPackage(HTTPRequest req)
     {
-
             try
             {
                 Optional<Package> optPackage = getBodyAsPackage(req.getBody());

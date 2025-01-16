@@ -39,16 +39,15 @@ public class GameRepository
         }};
         battleLogger = new StringBuilder();
     }
+    private enum BattleOutcome {
+        PLAYER1_WIN, PLAYER2_WIN, DRAW
+    }
 
     public static GameRepository getInstance() {
         if (instance == null) {
             instance = new GameRepository();
         }
         return instance;
-    }
-
-    public enum BattleOutcome {
-        PLAYER1_WIN, PLAYER2_WIN, DRAW
     }
 
     public String start(User u1, User u2) throws SQLException {
@@ -89,18 +88,19 @@ public class GameRepository
             battleLogger.append(u2.getUsername()).append("´s cards: ").append(player2_deck.getSize()).append("\n\n");
 
             if (player1_deck.getSize() == 0) {
-                updateUserStats(u1,u2);
+                updateUserStats(u1,u2,result);
                 battleLogger.append(u2.getUsername()).append(" won match against ").append(u1.getUsername()).append("\n");
                 return battleLogger.toString();
             }
             if (player2_deck.getSize() == 0) {
-                updateUserStats(u2,u1);
+                updateUserStats(u2,u1,result);
                 battleLogger.append(u1.getUsername()).append(" won match against ").append(u2.getUsername());
                 return battleLogger.toString();
             }
             round++;
         }
-        battleLogger.append(u1.getUsername()).append(" won match against ").append(u2.getUsername());
+        updateUserStats(u2,u1,BattleOutcome.DRAW);
+        battleLogger.append(u1.getUsername()).append(" draw match against ").append(u2.getUsername());
         return battleLogger.toString();
     }
 
@@ -170,7 +170,7 @@ public class GameRepository
 
         return BattleOutcome.DRAW;
     }
-    private void updateUserStats(User loser, User winner) throws SQLException {
+    private void updateUserStats(User loser, User winner,BattleOutcome bo) throws SQLException {
         String getStatsCmd = """
             SELECT wins, losses, elo FROM userstats WHERE user_id = ?
             """;
@@ -186,18 +186,26 @@ public class GameRepository
 
         ResultSet winnerStats = db.executeQuery(getStatsCmd, winner.getId());
         int winnerWins = 0, winnerLosses = 0, winnerElo = 1000;
-        if (winnerStats.next()) {
-            winnerWins = winnerStats.getInt("wins");
-            winnerLosses = winnerStats.getInt("losses");
-            winnerElo = winnerStats.getInt("elo");
-        }
+        if (!winnerStats.next()) return;
+
+        winnerWins = winnerStats.getInt("wins");
+        winnerLosses = winnerStats.getInt("losses");
+        winnerElo = winnerStats.getInt("elo");
 
         ResultSet loserStats = db.executeQuery(getStatsCmd, loser.getId());
         int loserWins = 0, loserLosses = 0, loserElo = 1000;
-        if (loserStats.next()) {
-            loserWins = loserStats.getInt("wins");
-            loserLosses = loserStats.getInt("losses");
-            loserElo = loserStats.getInt("elo");
+        if (!loserStats.next()) return;
+
+        loserWins = loserStats.getInt("wins");
+        loserLosses = loserStats.getInt("losses");
+        loserElo = loserStats.getInt("elo");
+
+        if(bo.equals(BattleOutcome.DRAW))
+        {
+            db.executeUpdate(statsCmd, winner.getId(), winnerWins, winnerLosses, winnerElo);
+            db.executeUpdate(statsCmd, loser.getId(), loserWins, loserLosses, loserElo);
+            db.disconnect();
+            return;
         }
 
         double winnerExpected = 1 / (1 + Math.pow(10, (loserElo - winnerElo) / 400.0));

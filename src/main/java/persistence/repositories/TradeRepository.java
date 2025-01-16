@@ -157,10 +157,12 @@ public class TradeRepository
 
             if (!executeTrade(db, offererCard, accepterCard, accepterId, offererId, tradeOffer.getId())) {
                 db.rollback();
+                db.disconnect();
                 return TradeState.NO_SUCCESS;
             }
 
             db.commit();
+            db.disconnect();
             return TradeState.SUCCESS;
         }
         return TradeState.NO_SUCCESS;
@@ -179,6 +181,7 @@ public class TradeRepository
         DatabaseManager db = new DatabaseManager();
         db.connect();
         ResultSet result = db.executeQuery("SELECT * FROM usercards WHERE card_id=?",offererCardId);
+        db.disconnect();
         if(!result.next()) return Optional.empty();
         return Optional.of(new Card(result.getString("name"),
                 result.getDouble("damage"),
@@ -201,6 +204,38 @@ public class TradeRepository
 
         res = db.executeUpdate(tradeDeleteQuery, tradeId);
         return res >= 1;
+    }
+
+    public boolean removeOffer(User user, String tradeID) throws SQLException {
+        DatabaseManager db = new DatabaseManager();
+        db.connect();
+        db.setAutoCommit(false);
+        if(!executeRemove(db,tradeID,user.getId())) {
+            db.rollback();
+            db.disconnect();
+            return false;
+        }
+        db.commit();
+        db.disconnect();
+        return true;
+    }
+
+    private boolean executeRemove(DatabaseManager db, String tradeID,String userId) throws SQLException {
+        String query = "Select cardToTrade from trades where id=?";
+        ResultSet result = db.executeQuery(query,tradeID);
+        if(!result.next()) return false;
+
+        String cardId = result.getString("cardToTrade");
+        query = "Select user_id from usercards where card_id=?";
+        result = db.executeQuery(query,cardId);
+        if(!result.next()) return false;
+        String cmpUserId = result.getString("user_id");
+        if(cmpUserId.equals(userId)) {
+            String deleteQuery = "DELETE FROM trades WHERE id=?";
+            db.executeUpdate(deleteQuery,tradeID);
+            return true;
+        }
+        return false;
     }
 
 }

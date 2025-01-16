@@ -120,7 +120,7 @@ public class CardRepository
                     card_IDs.get(1),
                     card_IDs.get(2),
                     card_IDs.get(3));
-            if (changed < 1) return false;
+            if (changed < 1) {db.disconnect();return false;}
             db.disconnect();
             return true;
         }

@@ -86,10 +86,10 @@ public class TradeService {
             user.orElseThrow(()->new IllegalStateException("User not found!"));
 
             Optional<Trade> tradeOffer = tradeRepository.getTradeById(tradeId);
-            if(tradeOffer.isEmpty()) return new HTTPResponse("400","Could not find tradeID: " + tradeId,"text/plain");
+            tradeOffer.orElseThrow(()->new IllegalStateException("Could not find tradeID: "+ tradeId));
 
             Optional<Card> cardToGive = tradeRepository.getCardToTradeById(user.get(),cardToTrade);
-            if(cardToGive.isEmpty()) return new HTTPResponse("400","Could not find given cardID: " + cardToTrade,"text/plain");
+            cardToGive.orElseThrow(()->new IllegalStateException("Could not find given cardID: " + cardToTrade));
 
             TradeState state = tradeRepository.startTrade(user.get(),tradeOffer.get(),cardToGive.get());
 
@@ -109,6 +109,34 @@ public class TradeService {
             {
                 return new HTTPResponse(status, "DB error","plain/text");
             }
+
+            return new HTTPResponse(status, e.getMessage(),"plain/text");
+        }
+    }
+
+    public HTTPResponse deleteTrade(HTTPRequest req){
+        String[] pathParts = req.getPath().split("/");
+        String tradeId = (pathParts.length > 2) ? pathParts[2] : "";
+        if(tradeId.isEmpty()) return new HTTPResponse("400","No tradeID provided!","text/plain");
+
+        try
+        {
+            Optional<User> user = userRepository.getUserByToken(req.getToken());
+            user.orElseThrow(()->new IllegalStateException("User not found!"));
+            if(!tradeRepository.removeOffer(user.get(),tradeId)) throw new IllegalStateException("Trade could not be removed!");
+            return new HTTPResponse("200","Succesfully removed your offer!","text/plain");
+        }catch (SQLException | IllegalStateException e) {
+            String status = "500";
+
+            if(e instanceof IllegalStateException)
+            {
+                status = "404";
+            }
+
+            /*if(e instanceof SQLException)
+            {
+                return new HTTPResponse(status, "DB error","plain/text");
+            }*/
 
             return new HTTPResponse(status, e.getMessage(),"plain/text");
         }

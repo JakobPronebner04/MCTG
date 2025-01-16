@@ -16,6 +16,7 @@ import domain.models.User;
 import persistence.repositories.UserRepository;
 
 import java.sql.SQLException;
+import java.util.Optional;
 
 public class UserServiceTest {
 
@@ -66,20 +67,20 @@ public class UserServiceTest {
     }
 
     @Test
-    void register_sqlException_returns500Response() throws SQLException {
+    void register_sqlException_returns500Response() throws SQLException, JsonProcessingException {
         HTTPRequest request = mock(HTTPRequest.class);
 
         when(request.getBody()).thenReturn("{\"username\":\"testUser\",\"password\":\"password123\"}");
 
         User user = new User("testUser", "password123");
+        when(userRepositoryMock.addUser(eq(user))).thenThrow(new SQLException("DB error"));
         when(jsonParserMock.readValue(anyString(), eq(User.class))).thenReturn(user);
-        when(userRepositoryMock.addUser(user)).thenThrow(new SQLException("Database error"));
-
         HTTPResponse response = userService.register(request);
 
         assertEquals("500", response.getStatus());
         assertEquals("DB error", response.getStatusMessage());
     }
+
 
     @Test
     void login_validCredentials_returns200ResponseWithToken() throws SQLException, JsonProcessingException {
@@ -120,9 +121,8 @@ public class UserServiceTest {
         when(request.getBody()).thenReturn("{\"username\":\"testUser\",\"password\":\"password123\"}");
 
         User user = new User("testUser", "password123");
+        when(userRepositoryMock.getUser(eq(user))).thenThrow(new SQLException("DB error"));
         when(jsonParserMock.readValue(anyString(), eq(User.class))).thenReturn(user);
-        when(userRepositoryMock.getUser(eq(user))).thenThrow(new SQLException("Database error"));
-
         HTTPResponse response = userService.login(request);
 
         assertEquals("500", response.getStatus());

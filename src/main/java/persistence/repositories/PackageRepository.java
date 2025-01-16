@@ -25,10 +25,10 @@ public class PackageRepository
         return instance;
     }
 
-    public boolean addPackage(Package pkg) throws SQLException {
+    public synchronized boolean addPackage(Package pkg) throws SQLException {
         DatabaseManager db = new DatabaseManager();
 
-        String addPackageCmd = "INSERT INTO packages (package_id) VALUES (?)";
+        String addPackageCmd = "INSERT INTO packages (package_id) VALUES (?) ";
         String addCardCmd = "INSERT INTO packagecards (card_id,package_id,name,damage) VALUES (?, ?, ?, ?)";
 
         db.connect();
@@ -53,7 +53,7 @@ public class PackageRepository
         return false;
     }
 
-    public boolean getPackage(User user) throws SQLException {
+    public synchronized boolean getPackage(User user) throws SQLException {
         DatabaseManager db = new DatabaseManager();
         db.connect();
         String getFirstPackageIdCmd = "SELECT package_id FROM Packages ORDER BY package_id LIMIT 1";

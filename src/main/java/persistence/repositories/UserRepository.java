@@ -40,6 +40,7 @@ public class UserRepository {
             db.disconnect();
             return rowsAffected > 0;
         }
+        db.disconnect();
         return false;
     }
 
@@ -64,7 +65,7 @@ public class UserRepository {
                 return strToken;
             }
         }
-
+        db.disconnect();
         return "";
     }
     public void updateCoins(User user) throws SQLException
@@ -80,6 +81,7 @@ public class UserRepository {
         db.connect();
         String updateCoinsCmd = "Update users SET coins = ? WHERE uname = ?";
         db.executeUpdate(updateCoinsCmd,coins-costs,user.getUsername());
+        db.disconnect();
 
     }
     public boolean editData(User user, UserProperties up) throws SQLException {
@@ -97,6 +99,7 @@ public class UserRepository {
                 up.getName(),
                 up.getBio(),
                 up.getImage());
+        db.disconnect();
         return res > 0;
     }
     public Optional<User> getUserByToken(String token) throws SQLException
@@ -106,6 +109,7 @@ public class UserRepository {
         String checkForUserCmd = "SELECT * FROM users WHERE token = ?";
         ResultSet res = db.executeQuery(checkForUserCmd,token);
         if(!res.next()){
+            db.disconnect();
             return Optional.empty();
         }
 
@@ -116,6 +120,7 @@ public class UserRepository {
         user.setCoins(res.getInt("coins"));
         user.setToken(token);
         user.setId(res.getString("user_id"));
+        db.disconnect();
         return Optional.of(user);
     }
 
@@ -129,13 +134,16 @@ public class UserRepository {
 
         ResultSet res = db.executeQuery(getDeckCardsCmd, user.getId());
 
-        if (!res.next()) return Optional.empty();
-
-        UserProperties up = new UserProperties(
-                res.getString("name"),
-                res.getString("bio"),
-                res.getString("image")
-        );
-        return Optional.of(up);
+        if (res.next()){
+            UserProperties up = new UserProperties(
+                    res.getString("name"),
+                    res.getString("bio"),
+                    res.getString("image")
+            );
+            db.disconnect();
+            return Optional.of(up);
+        }
+        db.disconnect();
+        return Optional.empty();
     }
 }

@@ -5,84 +5,31 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="dad0ab66-a947-4306-b1c4-5958864e97eb" name="Changes" comment="updated">
-      <change afterPath="$PROJECT_DIR$/src/main/java/application/handlers/CardHandler.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/application/handlers/GameHandler.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/application/handlers/PackageHandler.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/application/handlers/ScoreboardHandler.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/application/handlers/StatsHandler.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/application/handlers/TradingHandler.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/application/handlers/TransactionHandler.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/application/handlers/UserSessionHandler.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/domain/enums/TradeState.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/domain/models/Trade.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/domain/services/TradeService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/persistence/repositories/GameRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/persistence/repositories/TradeRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/tests/services/DeckServiceTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/tests/services/PackageServiceTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/tests/services/UserServiceTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/MCTG.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/MCTG.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/logs/mctg.log" beforeDir="false" afterPath="$PROJECT_DIR$/logs/mctg.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/enums/ElementType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/domain/enums/ElementType.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/enums/MonsterType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/domain/enums/MonsterType.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/enums/SpellType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/domain/enums/SpellType.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/exceptions/JsonParseException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/application/exceptions/JsonParseException.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/handlers/BattleHandler.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/handlers/CardHandler.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/handlers/DeckHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/application/handlers/DeckHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/handlers/PackageHandler.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/handlers/RequestHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/application/handlers/RequestHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/handlers/ScoreboardHandler.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/handlers/StatsHandler.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/handlers/TradingHandler.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/handlers/TransactionHandler.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/handlers/UserActionHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/application/handlers/UserActionHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/handlers/UserSessionHandler.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/http/HTTPRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/presentation/http/HTTPRequest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/http/HTTPResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/presentation/http/HTTPResponse.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/http/HTTPRouter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/presentation/http/HTTPRouter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/interfaces/RequestHandleable.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/application/interfaces/RequestHandleable.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/json/JSONParser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/utils/json/JSONParser.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/main/DatabaseManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/persistence/db/DatabaseManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/main/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/main/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/mapper/ObjectMapper.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/models/Battle.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/models/Card.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/domain/models/Card.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/models/Deck.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/domain/models/Deck.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/models/Package.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/domain/models/Package.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/models/Token.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/domain/models/Token.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/models/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/domain/models/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/models/UserProperties.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/domain/models/UserProperties.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/repositories/CardRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/persistence/repositories/CardRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/repositories/GameRepository.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/repositories/PackageRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/persistence/repositories/PackageRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/repositories/UserRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/persistence/repositories/UserRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/server/Server.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/presentation/server/Server.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/services/BattleService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/domain/services/GameService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/services/CardService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/domain/services/CardService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/services/DeckService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/domain/services/DeckService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/services/PackageService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/domain/services/PackageService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/services/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/domain/services/UserService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/enums/ElementType.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/enums/MonsterType.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/enums/SpellType.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/handlers/BattleHandler.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/handlers/CardHandler.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/handlers/DeckHandler.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/handlers/PackageHandler.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/handlers/ScoreboardHandler.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/handlers/StatsHandler.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/handlers/TradingHandler.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/handlers/UserActionHandler.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/handlers/UserSessionHandler.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/http/HTTPRequest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/http/HTTPResponse.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/http/HTTPRouter.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/interfaces/RequestHandleable.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/main/DatabaseManager.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/main/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/main/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/application/handlers/TradingHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/application/handlers/TradingHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/domain/services/PackageService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/domain/services/PackageService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/domain/services/TradeService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/domain/services/TradeService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/domain/services/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/domain/services/UserService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/persistence/repositories/CardRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/persistence/repositories/CardRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/persistence/repositories/GameRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/persistence/repositories/GameRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/persistence/repositories/PackageRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/persistence/repositories/PackageRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/persistence/repositories/TradeRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/persistence/repositories/TradeRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/persistence/repositories/UserRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/persistence/repositories/UserRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/tests/services/UserServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/tests/services/UserServiceTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/application/handlers/TradingHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application/handlers/TradingHandler.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/domain/services/PackageService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/domain/services/PackageService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/domain/services/TradeService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/domain/services/TradeService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/domain/services/UserService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/domain/services/UserService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/persistence/repositories/CardRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/persistence/repositories/CardRepository.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/persistence/repositories/GameRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/persistence/repositories/GameRepository.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/persistence/repositories/PackageRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/persistence/repositories/PackageRepository.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/persistence/repositories/TradeRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/persistence/repositories/TradeRepository.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/persistence/repositories/UserRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/persistence/repositories/UserRepository.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/services/CardServiceTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/services/CardServiceTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/services/DeckServiceTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/services/DeckServiceTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/services/PackageServiceTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/services/PackageServiceTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/services/UserServiceTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/services/UserServiceTest.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -151,6 +98,7 @@
     &quot;JUnit.AddPackageTest.testAddPackage_Success.executor&quot;: &quot;Run&quot;,
     &quot;JUnit.CardServiceTest.executor&quot;: &quot;Run&quot;,
     &quot;JUnit.DeckServiceTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.PackageServiceTest.executor&quot;: &quot;Run&quot;,
     &quot;JUnit.UserServiceTest.executor&quot;: &quot;Run&quot;,
     &quot;JUnit.UserServiceTest.testLogin_Failure_UserNotFound.executor&quot;: &quot;Debug&quot;,
     &quot;Repository.Attach.Annotations&quot;: &quot;false&quot;,
@@ -163,7 +111,7 @@
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
     &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary&quot;: &quot;JUnit4&quot;,
     &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit4&quot;: &quot;&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
     &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
     &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
     &quot;last_directory_selection&quot;: &quot;C:/FH/Java/MCTG/src/test/java/services&quot;,
@@ -201,7 +149,7 @@
       <recent name="main" />
     </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="JUnit.AddPackageTest">
     <configuration name="AddPackageTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="MCTG" />
       <extension name="coverage">
@@ -213,22 +161,6 @@
       <option name="PACKAGE_NAME" value="services" />
       <option name="MAIN_CLASS_NAME" value="services.AddPackageTest" />
       <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="AddPackageTest.testAddPackage_Success" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="MCTG" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="services.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="services" />
-      <option name="MAIN_CLASS_NAME" value="services.AddPackageTest" />
-      <option name="METHOD_NAME" value="testAddPackage_Success" />
-      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -263,6 +195,21 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="PackageServiceTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="MCTG" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="services.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="services" />
+      <option name="MAIN_CLASS_NAME" value="services.PackageServiceTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="UserServiceTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="MCTG" />
       <extension name="coverage">
@@ -280,11 +227,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.AddPackageTest" />
-        <item itemvalue="JUnit.DeckServiceTest" />
+        <item itemvalue="JUnit.PackageServiceTest" />
         <item itemvalue="JUnit.UserServiceTest" />
         <item itemvalue="JUnit.CardServiceTest" />
-        <item itemvalue="JUnit.AddPackageTest.testAddPackage_Success" />
+        <item itemvalue="JUnit.DeckServiceTest" />
+        <item itemvalue="JUnit.AddPackageTest" />
       </list>
     </recent_temporary>
   </component>
@@ -414,6 +361,13 @@
       <workItem from="1736705380685" duration="4455000" />
       <workItem from="1736713225279" duration="2276000" />
       <workItem from="1736762319507" duration="2367000" />
+      <workItem from="1736802893974" duration="3302000" />
+      <workItem from="1736807375993" duration="208000" />
+      <workItem from="1736807742949" duration="1229000" />
+      <workItem from="1736887025612" duration="2526000" />
+      <workItem from="1736979201886" duration="1578000" />
+      <workItem from="1737036322768" duration="2071000" />
+      <workItem from="1737038446941" duration="540000" />
     </task>
     <task id="LOCAL-00001" summary="changed jackson dependencie">
       <option name="closed" value="true" />

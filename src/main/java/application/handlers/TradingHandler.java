@@ -19,6 +19,11 @@ public class TradingHandler implements RequestHandleable
             }
             return tradeService.createTrade(req);
         }
+        if(req.getMethod().equalsIgnoreCase("DELETE")){
+            if(req.getPath().split("/").length == 3) {
+                return tradeService.deleteTrade(req);
+            }
+        }
 
         if(req.getMethod().equalsIgnoreCase("GET"))
             return tradeService.showTrades(req);

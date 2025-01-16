@@ -23,7 +23,6 @@ public class UserService
 
     public HTTPResponse register(HTTPRequest req)
     {
-        UserRepository userRepository = UserRepository.getInstance();
         try
         {
             User user = jsonParser.readValue(req.getBody(),User.class);
@@ -55,7 +54,6 @@ public class UserService
 
     public HTTPResponse login(HTTPRequest req)
     {
-        UserRepository userRepository = UserRepository.getInstance();
         try
         {
             User user = jsonParser.readValue(req.getBody(),User.class);
@@ -86,7 +84,6 @@ public class UserService
     }
     public HTTPResponse changeUserData(HTTPRequest req)
     {
-        UserRepository userRepository = UserRepository.getInstance();
         try {
             Optional<User> user = userRepository.getUserByToken(req.getToken());
             user.orElseThrow(() -> new IllegalStateException("User not found!"));
@@ -146,10 +143,10 @@ public class UserService
             {
                 status = "404";
             }
-            if(e instanceof SQLException)
+            /*if(e instanceof SQLException)
             {
                 return new HTTPResponse(status, "DB error","plain/text");
-            }
+            }*/
 
             return new HTTPResponse(status, e.getMessage(),"plain/text");
         }
