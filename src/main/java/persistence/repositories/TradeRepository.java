@@ -22,7 +22,7 @@ public class TradeRepository
         }
         return instance;
     }
-    public boolean addTrade(User user,Trade trade) throws SQLException {
+    public synchronized boolean addTrade(User user,Trade trade) throws SQLException {
         boolean availableCard = checkCardAvailable(user,trade);
         if (availableCard) {
             DatabaseManager db = new DatabaseManager();
@@ -54,7 +54,7 @@ public class TradeRepository
         return false;
     }
 
-    public Optional<Trade> getTradeById(String tradeId) throws SQLException {
+    public synchronized Optional<Trade> getTradeById(String tradeId) throws SQLException {
         DatabaseManager db = new DatabaseManager();
         db.connect();
         ResultSet result = db.executeQuery("SELECT * FROM trades WHERE id=?",tradeId);
@@ -70,7 +70,7 @@ public class TradeRepository
         return Optional.empty();
     }
 
-    public Optional<Card> getCardToTradeById(User user,String changeCard) throws SQLException {
+    public synchronized Optional<Card> getCardToTradeById(User user,String changeCard) throws SQLException {
         DatabaseManager db = new DatabaseManager();
         db.connect();
         ResultSet result = db.executeQuery("SELECT * FROM usercards WHERE card_id = ? AND user_id = ?",changeCard,user.getId());
@@ -87,7 +87,7 @@ public class TradeRepository
         return Optional.empty();
     }
 
-    public String getTrades() throws SQLException
+    public synchronized String getTrades() throws SQLException
     {
         boolean empty = true;
         String trades = """
@@ -138,7 +138,7 @@ public class TradeRepository
         sb.append(String.format("%-50s %-30s %-20s %-1s%n", col1, col2, col3,"|"));
     }
 
-    public TradeState startTrade(User user, Trade tradeOffer, Card accepterCard) throws SQLException {
+    public synchronized TradeState startTrade(User user, Trade tradeOffer, Card accepterCard) throws SQLException {
 
         if(accepterCard.getCardType().equals(tradeOffer.getType())
                 && accepterCard.getDamage() >= tradeOffer.getMinimumDamage())
@@ -206,7 +206,7 @@ public class TradeRepository
         return res >= 1;
     }
 
-    public boolean removeOffer(User user, String tradeID) throws SQLException {
+    public synchronized boolean removeOffer(User user, String tradeID) throws SQLException {
         DatabaseManager db = new DatabaseManager();
         db.connect();
         db.setAutoCommit(false);

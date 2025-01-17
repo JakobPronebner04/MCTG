@@ -1,4 +1,5 @@
 package domain.services;
+import application.exceptions.FailureResponse;
 import presentation.http.HTTPRequest;
 import presentation.http.HTTPResponse;
 import utils.json.JSONParser;
@@ -16,6 +17,7 @@ public class PackageService
 {
     private final PackageRepository packageRepository;
     private final UserRepository userRepository;
+
     public PackageService(UserRepository userRepository, PackageRepository packageRepository){
         this.userRepository = userRepository;
         this.packageRepository = packageRepository;
@@ -40,19 +42,7 @@ public class PackageService
             }
             catch (SQLException | IllegalStateException e)
             {
-                String status = "500";
-
-                if(e instanceof IllegalStateException)
-                {
-                    status = "404";
-                }
-
-                if(e instanceof SQLException)
-                {
-                    return new HTTPResponse(status, "DB error","plain/text");
-                }
-
-                return new HTTPResponse(status, e.getMessage(),"plain/text");
+                return FailureResponse.getHTTPException(e);
             }
     }
 
@@ -79,19 +69,7 @@ public class PackageService
         }
         catch (SQLException | IllegalStateException e)
         {
-            String status = "500";
-
-            if(e instanceof IllegalStateException)
-            {
-                status = "404";
-            }
-
-            if(e instanceof SQLException)
-            {
-                return new HTTPResponse(status, "DB error","plain/text");
-            }
-
-            return new HTTPResponse(status, e.getMessage(),"plain/text");
+            return FailureResponse.getHTTPException(e);
         }
     }
 

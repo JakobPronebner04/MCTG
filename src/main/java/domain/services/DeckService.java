@@ -1,4 +1,6 @@
 package domain.services;
+import application.exceptions.FailureResponse;
+import persistence.repositories.PackageRepository;
 import presentation.http.HTTPRequest;
 import presentation.http.HTTPResponse;
 import utils.json.JSONParser;
@@ -11,11 +13,14 @@ import java.util.List;
 import java.util.Optional;
 
 public class DeckService {
+    private final CardRepository cardRepository;
+    private final UserRepository userRepository;
 
+    public DeckService(UserRepository userRepository, CardRepository cardRepository){
+        this.userRepository = userRepository;
+        this.cardRepository = cardRepository;
+    }
     public synchronized HTTPResponse configureDeck(HTTPRequest req) {
-        CardRepository cardRepository = CardRepository.getInstance();
-        UserRepository userRepository = UserRepository.getInstance();
-
         try {
             Optional<User> u = userRepository.getUserByToken(req.getToken());
             if (u.isEmpty()) {
@@ -30,23 +35,11 @@ public class DeckService {
 
             return new HTTPResponse("404", "Could not change deck!", "text/plain");
         } catch (SQLException | IllegalStateException e) {
-            String status = "500";
-
-            if (e instanceof IllegalStateException) {
-                status = "404";
-            }
-
-            if (e instanceof SQLException) {
-                return new HTTPResponse(status, "DB error", "plain/text");
-            }
-
-            return new HTTPResponse(status, e.getMessage(), "plain/text");
+            return FailureResponse.getHTTPException(e);
         }
     }
 
     public HTTPResponse showDeck(HTTPRequest req, boolean plain) {
-        CardRepository cardRepository = CardRepository.getInstance();
-        UserRepository userRepository = UserRepository.getInstance();
         try {
             Optional<User> u = userRepository.getUserByToken(req.getToken());
             if(u.isEmpty()){
@@ -61,17 +54,7 @@ public class DeckService {
             return new HTTPResponse("200","All cards in current deck:","text/plain",deckOutput);
         }
         catch (SQLException | IllegalStateException e) {
-            String status = "500";
-
-            if(e instanceof IllegalStateException) {
-                status = "404";
-            }
-
-            if(e instanceof SQLException) {
-                return new HTTPResponse(status, "DB error","plain/text");
-            }
-
-            return new HTTPResponse(status, e.getMessage(),"plain/text");
+            return FailureResponse.getHTTPException(e);
         }
     }
 

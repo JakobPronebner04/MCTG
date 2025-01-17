@@ -16,6 +16,9 @@ public class UserSessionHandler implements RequestHandleable
         UserService service = new UserService(UserRepository.getInstance(), new JSONParser());
         if(req.getMethod().equalsIgnoreCase("POST"))
         {
+            if(req.getPath().split("/").length == 3) {
+                return service.logout(req);
+            }
             return service.login(req);
         }
         return new HTTPResponse("400","Wrong Request","text/plain","");

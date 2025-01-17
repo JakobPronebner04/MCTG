@@ -1,5 +1,6 @@
 package domain.services;
 
+import application.exceptions.FailureResponse;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import presentation.http.HTTPRequest;
 import presentation.http.HTTPResponse;
@@ -26,7 +27,6 @@ public class UserService
         try
         {
             User user = jsonParser.readValue(req.getBody(),User.class);
-
             if(userRepository.addUser(user))
             {
                 return new HTTPResponse("200","User successfully registered!","text/plain");
@@ -36,20 +36,8 @@ public class UserService
         }
         catch (SQLException | IllegalStateException e)
         {
-            String status = "500";
-
-            if(e instanceof IllegalStateException)
-            {
-                status = "404";
-            }
-            if(e instanceof SQLException)
-            {
-                return new HTTPResponse(status, "DB error","plain/text");
-            }
-
-            return new HTTPResponse(status, e.getMessage(),"plain/text");
+            return FailureResponse.getHTTPException(e);
         }
-
     }
 
     public HTTPResponse login(HTTPRequest req)
@@ -68,18 +56,22 @@ public class UserService
         }
         catch (SQLException | IllegalStateException e)
         {
-            String status = "500";
+            return FailureResponse.getHTTPException(e);
+        }
+    }
 
-            if(e instanceof IllegalStateException)
-            {
-                status = "404";
-            }
-            if(e instanceof SQLException)
-            {
-                return new HTTPResponse(status, "DB error","plain/text");
-            }
+    public HTTPResponse logout(HTTPRequest req)
+    {
+        try {
+            Optional<User> user = userRepository.getUserByToken(req.getToken());
+            user.orElseThrow(() -> new IllegalStateException("User not found!"));
 
-            return new HTTPResponse(status, e.getMessage(),"plain/text");
+            if(userRepository.removeToken(user.get()))
+                return new HTTPResponse("200","User successfully logged out!","text/plain");
+            return new HTTPResponse("404","Could not logout!","text/plain");
+        }
+        catch (SQLException | IllegalStateException e) {
+            return FailureResponse.getHTTPException(e);
         }
     }
     public HTTPResponse changeUserData(HTTPRequest req)
@@ -101,19 +93,8 @@ public class UserService
 
             return new HTTPResponse("404","Userdata could not be changed!","text/plain");
         }
-        catch (JsonProcessingException | SQLException | IllegalStateException e) {
-            String status = "500";
-
-            if(e instanceof IllegalStateException)
-            {
-                status = "404";
-            }
-            if(e instanceof SQLException)
-            {
-                return new HTTPResponse(status, "DB error","plain/text");
-            }
-
-            return new HTTPResponse(status, e.getMessage(),"plain/text");
+        catch ( SQLException | IllegalStateException e) {
+            return FailureResponse.getHTTPException(e);
         }
     }
 
@@ -137,23 +118,12 @@ public class UserService
             return new HTTPResponse("200","Current Userdata:","text/plain",upOutput);
         }
         catch (SQLException | IllegalStateException e) {
-            String status = "500";
-
-            if(e instanceof IllegalStateException)
-            {
-                status = "404";
-            }
-            /*if(e instanceof SQLException)
-            {
-                return new HTTPResponse(status, "DB error","plain/text");
-            }*/
-
-            return new HTTPResponse(status, e.getMessage(),"plain/text");
+            return FailureResponse.getHTTPException(e);
         }
 
     }
 
-    private Optional<UserProperties> getBodyAsProperties(HTTPRequest req) throws JsonProcessingException
+    private Optional<UserProperties> getBodyAsProperties(HTTPRequest req)
     {
         JSONParser parser = new JSONParser();
         System.out.println(req.getBody());

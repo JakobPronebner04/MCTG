@@ -4,10 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="dad0ab66-a947-4306-b1c4-5958864e97eb" name="Changes" comment="updated">
+    <list default="true" id="dad0ab66-a947-4306-b1c4-5958864e97eb" name="Changes" comment="updated battleLogic and tradeLogic">
+      <change afterPath="$PROJECT_DIR$/src/main/java/application/exceptions/FailureResponse.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/logs/mctg.log" beforeDir="false" afterPath="$PROJECT_DIR$/logs/mctg.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/application/handlers/TradingHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/application/handlers/TradingHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/application/handlers/DeckHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/application/handlers/DeckHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/application/handlers/UserSessionHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/application/handlers/UserSessionHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/domain/models/Token.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/domain/models/Token.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/domain/services/CardService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/domain/services/CardService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/domain/services/DeckService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/domain/services/DeckService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/domain/services/GameService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/domain/services/GameService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/domain/services/PackageService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/domain/services/PackageService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/domain/services/TradeService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/domain/services/TradeService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/domain/services/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/domain/services/UserService.java" afterDir="false" />
@@ -16,20 +22,23 @@
       <change beforePath="$PROJECT_DIR$/src/main/java/persistence/repositories/PackageRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/persistence/repositories/PackageRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/persistence/repositories/TradeRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/persistence/repositories/TradeRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/persistence/repositories/UserRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/persistence/repositories/UserRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/tests/services/UserServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/tests/services/UserServiceTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/application/handlers/TradingHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application/handlers/TradingHandler.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/presentation/http/HTTPRouter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/presentation/http/HTTPRouter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/tests/services/DeckServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/tests/services/DeckServiceTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/tests/services/PackageServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/tests/services/PackageServiceTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/application/handlers/DeckHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application/handlers/DeckHandler.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/application/handlers/UserSessionHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application/handlers/UserSessionHandler.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/domain/models/Token.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/domain/models/Token.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/domain/services/DeckService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/domain/services/DeckService.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/domain/services/PackageService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/domain/services/PackageService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/domain/services/TradeService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/domain/services/TradeService.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/domain/services/UserService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/domain/services/UserService.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/persistence/repositories/CardRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/persistence/repositories/CardRepository.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/persistence/repositories/GameRepository$BattleOutcome.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/persistence/repositories/GameRepository$BattleOutcome.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/persistence/repositories/GameRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/persistence/repositories/GameRepository.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/persistence/repositories/PackageRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/persistence/repositories/PackageRepository.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/persistence/repositories/TradeRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/persistence/repositories/TradeRepository.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/persistence/repositories/UserRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/persistence/repositories/UserRepository.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/services/CardServiceTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/services/CardServiceTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/presentation/http/HTTPRouter.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/presentation/http/HTTPRouter.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/test-classes/services/DeckServiceTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/services/DeckServiceTest.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/test-classes/services/PackageServiceTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/services/PackageServiceTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/services/UserServiceTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/services/UserServiceTest.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -42,8 +51,8 @@
         <option value="Interface" />
         <option value="JUnit4 Test Class" />
         <option value="Exception" />
-        <option value="Class" />
         <option value="Enum" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -64,7 +73,7 @@
   <component name="GithubPullRequestsUISettings">{
   &quot;selectedUrlAndAccountId&quot;: {
     &quot;url&quot;: &quot;https://github.com/JakobPronebner04/MCTG.git&quot;,
-    &quot;accountId&quot;: &quot;457489bd-a4dd-470c-a30a-2bdaf75c7525&quot;
+    &quot;accountId&quot;: &quot;59282620-9377-40eb-926c-455ba68d1837&quot;
   }
 }</component>
   <component name="MarkdownSettingsMigration">
@@ -90,50 +99,51 @@
     <option name="sortByType" value="true" />
     <option name="sortKey" value="BY_TYPE" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Application.Main.executor&quot;: &quot;Run&quot;,
-    &quot;Downloaded.Files.Path.Enabled&quot;: &quot;false&quot;,
-    &quot;JUnit.AddPackageTest.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.AddPackageTest.testAddPackage_Success.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.CardServiceTest.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.DeckServiceTest.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.PackageServiceTest.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.UserServiceTest.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.UserServiceTest.testLogin_Failure_UserNotFound.executor&quot;: &quot;Debug&quot;,
-    &quot;Repository.Attach.Annotations&quot;: &quot;false&quot;,
-    &quot;Repository.Attach.JavaDocs&quot;: &quot;false&quot;,
-    &quot;Repository.Attach.Sources&quot;: &quot;false&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary&quot;: &quot;JUnit4&quot;,
-    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit4&quot;: &quot;&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_directory_selection&quot;: &quot;C:/FH/Java/MCTG/src/test/java/services&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/FH/Java/MCTG&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;onboarding.tips.debug.path&quot;: &quot;C:/Users/Jakob Pronebner/IdeaProjects/MCTG/src/main/java/Main.java&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;project.scopes&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Application.Main.executor": "Run",
+    "Downloaded.Files.Path.Enabled": "false",
+    "JUnit.AddPackageTest.executor": "Run",
+    "JUnit.AddPackageTest.testAddPackage_Success.executor": "Run",
+    "JUnit.CardServiceTest.executor": "Run",
+    "JUnit.DeckServiceTest.executor": "Run",
+    "JUnit.PackageServiceTest.executor": "Run",
+    "JUnit.UserServiceTest.executor": "Run",
+    "JUnit.UserServiceTest.testLogin_Failure_UserNotFound.executor": "Debug",
+    "JUnit.services in MCTG.executor": "Run",
+    "Repository.Attach.Annotations": "false",
+    "Repository.Attach.JavaDocs": "false",
+    "Repository.Attach.Sources": "false",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit4",
+    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit4": "",
+    "git-widget-placeholder": "main",
+    "ignore.virus.scanning.warn.message": "true",
+    "kotlin-language-version-configured": "true",
+    "last_directory_selection": "C:/FH/Java/MCTG/src/test/java/services",
+    "last_opened_file_path": "C:/FH/Java/MCTG",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "onboarding.tips.debug.path": "C:/Users/Jakob Pronebner/IdeaProjects/MCTG/src/main/java/Main.java",
+    "project.structure.last.edited": "Project",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "project.scopes",
+    "vue.rearranger.settings.migration": "true"
   },
-  &quot;keyToStringList&quot;: {
-    &quot;DatabaseDriversLRU&quot;: [
-      &quot;postgresql&quot;
+  "keyToStringList": {
+    "DatabaseDriversLRU": [
+      "postgresql"
     ]
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
       <recent name="handlers" />
@@ -149,22 +159,7 @@
       <recent name="main" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.AddPackageTest">
-    <configuration name="AddPackageTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="MCTG" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="services.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="services" />
-      <option name="MAIN_CLASS_NAME" value="services.AddPackageTest" />
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
+  <component name="RunManager">
     <configuration name="CardServiceTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="MCTG" />
       <extension name="coverage">
@@ -225,13 +220,27 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="services in MCTG" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="MCTG" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="services.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="services" />
+      <option name="TEST_OBJECT" value="package" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.PackageServiceTest" />
-        <item itemvalue="JUnit.UserServiceTest" />
-        <item itemvalue="JUnit.CardServiceTest" />
+        <item itemvalue="JUnit.services in MCTG" />
         <item itemvalue="JUnit.DeckServiceTest" />
-        <item itemvalue="JUnit.AddPackageTest" />
+        <item itemvalue="JUnit.UserServiceTest" />
+        <item itemvalue="JUnit.PackageServiceTest" />
+        <item itemvalue="JUnit.CardServiceTest" />
       </list>
     </recent_temporary>
   </component>
@@ -367,7 +376,9 @@
       <workItem from="1736887025612" duration="2526000" />
       <workItem from="1736979201886" duration="1578000" />
       <workItem from="1737036322768" duration="2071000" />
-      <workItem from="1737038446941" duration="540000" />
+      <workItem from="1737038446941" duration="690000" />
+      <workItem from="1737057002187" duration="2352000" />
+      <workItem from="1737066867940" duration="4155000" />
     </task>
     <task id="LOCAL-00001" summary="changed jackson dependencie">
       <option name="closed" value="true" />
@@ -433,7 +444,15 @@
       <option name="project" value="LOCAL" />
       <updated>1736093977783</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="updated battleLogic and tradeLogic">
+      <option name="closed" value="true" />
+      <created>1737039041085</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1737039041085</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -477,7 +496,8 @@
     <MESSAGE value="Add UserRepository, reinit" />
     <MESSAGE value="created packagehandler logic" />
     <MESSAGE value="updated" />
-    <option name="LAST_COMMIT_MESSAGE" value="updated" />
+    <MESSAGE value="updated battleLogic and tradeLogic" />
+    <option name="LAST_COMMIT_MESSAGE" value="updated battleLogic and tradeLogic" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

@@ -1,6 +1,8 @@
 package application.handlers;
 
 import application.interfaces.RequestHandleable;
+import persistence.repositories.CardRepository;
+import persistence.repositories.UserRepository;
 import presentation.http.HTTPRequest;
 import presentation.http.HTTPResponse;
 import domain.services.DeckService;
@@ -9,7 +11,7 @@ public class DeckHandler implements RequestHandleable {
     @Override
     public HTTPResponse handle(HTTPRequest req) {
 
-        DeckService deckService = new DeckService();
+        DeckService deckService = new DeckService(UserRepository.getInstance(), CardRepository.getInstance());
         if(req.getMethod().equals("PUT")) {
 
             return deckService.configureDeck(req);

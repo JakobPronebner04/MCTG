@@ -9,7 +9,7 @@ import java.util.*;
 public class HTTPRouter
 {
     private final Map<String, RequestHandleable> routes;
-
+    private static Set<String> dynamicPaths;
     public HTTPRouter()
     {
         routes = new HashMap<>();
@@ -27,6 +27,8 @@ public class HTTPRouter
         this.routes.put("/scoreboard",new ScoreboardHandler());
         this.routes.put("/battles",new GameHandler());
         this.routes.put("/tradings",new TradingHandler());
+
+        dynamicPaths = new HashSet<>(Arrays.asList("users", "tradings", "sessions"));
     }
 
     public HTTPResponse route(HTTPRequest request) throws SQLException
@@ -43,7 +45,7 @@ public class HTTPRouter
         StringBuilder pathBuilder = new StringBuilder();
         for(String pathComponent : pathComponents) {
             if(pathComponent.contains("?")) pathComponent = pathComponent.split("\\?")[0];
-            if(!prevPath.equals("users") && !prevPath.equals("tradings")) pathBuilder.append("/").append(pathComponent);
+            if(!dynamicPaths.contains(prevPath)) pathBuilder.append("/").append(pathComponent);
             prevPath = pathComponent;
         }
 

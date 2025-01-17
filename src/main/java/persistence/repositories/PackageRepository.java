@@ -56,7 +56,7 @@ public class PackageRepository
     public synchronized boolean getPackage(User user) throws SQLException {
         DatabaseManager db = new DatabaseManager();
         db.connect();
-        String getFirstPackageIdCmd = "SELECT package_id FROM Packages ORDER BY package_id LIMIT 1";
+        String getFirstPackageIdCmd = "SELECT package_id FROM Packages package_id ASC LIMIT 1";
         ResultSet res = db.executeQuery(getFirstPackageIdCmd);
         if (res.next()) {
             String packageId = res.getString("package_id");

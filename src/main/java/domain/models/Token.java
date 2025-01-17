@@ -35,26 +35,4 @@ public class Token
                 .signWith(key, SignatureAlgorithm.HS256)
                 .compact();
     }
-
-    public static boolean validateToken(String token)
-    {
-
-            return !isTokenExpired(token);
-    }
-
-    private static boolean isTokenExpired(String token)
-    {
-        return false;
-    }
-
-    private static void refreshTokenValidation(String token) {
-        if (validateToken(token))
-        {
-
-        }
-    }
-
-    public void invalidateToken(String token) {
-
-    }
 }

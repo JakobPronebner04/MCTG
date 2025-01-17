@@ -24,19 +24,14 @@ import java.util.Optional;
 public class PackageServiceTest {
 
     private PackageService packageService;
-
-    @Mock
     private UserRepository userRepositoryMock;
-
-    @Mock
     private PackageRepository packageRepositoryMock;
-
-    @Mock
     private JSONParser jsonParserMock;
 
     @BeforeEach
     void setUp() {
-        MockitoAnnotations.openMocks(this);
+        userRepositoryMock = mock(UserRepository.class);
+        packageRepositoryMock = mock(PackageRepository.class);
         packageService = new PackageService(userRepositoryMock, packageRepositoryMock);
     }
 
@@ -45,19 +40,17 @@ public class PackageServiceTest {
         HTTPRequest request = mock(HTTPRequest.class);
         when(request.getToken()).thenReturn("admin-mtcgToken");
         when(request.getBody()).thenReturn("[{\"id\":\"card1\",\"name\":\"WaterGoblin\",\"damage\":50.0}," +
-                                              "{\"id\":\"card2\",\"name\":\"WaterSpell\",\"damage\":20.0}" +
-                                              "{\"id\":\"card3\",\"name\":\"KNIGHT\",\"damage\":20.0}" +
-                                              "{\"id\":\"card4\",\"name\":\"Dragon\",\"damage\":20.0}" +
+                                              "{\"id\":\"card2\",\"name\":\"WaterSpell\",\"damage\":20.0}," +
+                                              "{\"id\":\"card3\",\"name\":\"KNIGHT\",\"damage\":20.0}," +
+                                              "{\"id\":\"card4\",\"name\":\"Dragon\",\"damage\":20.0}," +
                                               "{\"id\":\"card5\",\"name\":\"ORK\",\"damage\":20.0}]");
 
-                Package pack = new Package(List.of(new Card("WaterGoblin",50.0,"card1"),
-                                           new Card("WaterSpell",20.0,"card2"),
-                                           new Card("KNIGHT",20.0,"card3"),
-                                           new Card("Dragon",20.0,"card4"),
-                                           new Card("ORK",20.0,"card5")));
-        when(packageRepositoryMock.addPackage(pack)).thenReturn(true);
+        when(packageRepositoryMock.addPackage(any(Package.class))).thenReturn(true);
+
+        User user = new User();
+        user.setToken("admin-mtcgToken");
         when(userRepositoryMock.getUserByToken("admin-mtcgToken"))
-                .thenReturn(Optional.of(new User("admin","1234")));
+                .thenReturn(Optional.of(user));
 
         HTTPResponse response = packageService.addPackage(request);
 
@@ -69,9 +62,16 @@ public class PackageServiceTest {
     void addPackage_nonAdminUser_returns404Response() throws SQLException {
         HTTPRequest request = mock(HTTPRequest.class);
         when(request.getToken()).thenReturn("user-mtcgToken");
+        when(request.getBody()).thenReturn("[{\"id\":\"card1\",\"name\":\"WaterGoblin\",\"damage\":50.0}," +
+                "{\"id\":\"card2\",\"name\":\"WaterSpell\",\"damage\":20.0}," +
+                "{\"id\":\"card3\",\"name\":\"KNIGHT\",\"damage\":20.0}," +
+                "{\"id\":\"card4\",\"name\":\"Dragon\",\"damage\":20.0}," +
+                "{\"id\":\"card5\",\"name\":\"ORK\",\"damage\":20.0}]");
 
+        User user = new User();
+        user.setToken("user-mtcgToken");
         when(userRepositoryMock.getUserByToken("user-mtcgToken"))
-                .thenReturn(Optional.of(new User("user", "1234")));
+                .thenReturn(Optional.of(user));
 
         HTTPResponse response = packageService.addPackage(request);
 
@@ -85,8 +85,10 @@ public class PackageServiceTest {
         when(request.getToken()).thenReturn("admin-mtcgToken");
         when(request.getBody()).thenReturn("[{\"name\":\"Card1\",\"damage\":50.0}]");
 
+        User user = new User();
+        user.setToken("admin-mtcgToken");
         when(userRepositoryMock.getUserByToken("admin-mtcgToken"))
-                .thenReturn(Optional.of(new User("admin","1234")));
+                .thenReturn(Optional.of(user));
         when(packageRepositoryMock.addPackage(any(Package.class))).thenThrow(new SQLException("DB error"));
 
         HTTPResponse response = packageService.addPackage(request);
@@ -149,13 +151,13 @@ public class PackageServiceTest {
 
         User user = new User("user", "1234");
         user.setCoins(10);
-        when(userRepositoryMock.getUserByToken("user-mtcgToken"))
+        when(userRepositoryMock.getUserByToken(anyString()))
                 .thenReturn(Optional.of(user));
         when(packageRepositoryMock.getPackage(user)).thenThrow(new SQLException("DB error"));
 
         HTTPResponse response = packageService.aquirePackage(request);
 
         assertEquals("500", response.getStatus());
-        assertEquals("DB error", response.getBody());
+        assertEquals("DB error", response.getStatusMessage());
     }
 }

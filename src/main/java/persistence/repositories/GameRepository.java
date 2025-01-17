@@ -186,7 +186,6 @@ public class GameRepository
 
         ResultSet winnerStats = db.executeQuery(getStatsCmd, winner.getId());
         int winnerWins = 0, winnerLosses = 0, winnerElo = 1000;
-        if (!winnerStats.next()) return;
 
         winnerWins = winnerStats.getInt("wins");
         winnerLosses = winnerStats.getInt("losses");
@@ -194,7 +193,6 @@ public class GameRepository
 
         ResultSet loserStats = db.executeQuery(getStatsCmd, loser.getId());
         int loserWins = 0, loserLosses = 0, loserElo = 1000;
-        if (!loserStats.next()) return;
 
         loserWins = loserStats.getInt("wins");
         loserLosses = loserStats.getInt("losses");
@@ -221,7 +219,7 @@ public class GameRepository
         db.disconnect();
     }
 
-    public String getStats(User user) throws SQLException
+    public synchronized String getStats(User user) throws SQLException
     {
         String userStatsCmd = """
                 Select * from userstats where user_id = ?;
@@ -245,7 +243,7 @@ public class GameRepository
         return stats.toString();
     }
 
-    public String getScores() throws SQLException{
+    public synchronized String getScores() throws SQLException{
         boolean scoresAvailable = false;
         String scoresCmd = """
                 SELECT\s

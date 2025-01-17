@@ -1,11 +1,13 @@
 package services;
 
 import domain.services.DeckService;
+import domain.services.PackageService;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
 import persistence.repositories.CardRepository;
+import persistence.repositories.PackageRepository;
 import persistence.repositories.UserRepository;
 import presentation.http.HTTPRequest;
 import presentation.http.HTTPResponse;
@@ -18,18 +20,15 @@ import static org.mockito.Mockito.*;
 
 class DeckServiceTest {
 
-    @Mock
     private CardRepository cardRepository;
-
-    @Mock
     private UserRepository userRepository;
-
     private DeckService deckService;
 
     @BeforeEach
     void setUp() {
-        MockitoAnnotations.openMocks(this);
-        deckService = new DeckService();
+        userRepository = mock(UserRepository.class);
+        cardRepository = mock(CardRepository.class);
+        deckService = new DeckService(userRepository, cardRepository);
     }
 
     @Test

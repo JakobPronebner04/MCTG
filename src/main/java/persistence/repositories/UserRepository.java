@@ -23,7 +23,7 @@ public class UserRepository {
         return instance;
     }
 
-    public boolean addUser(User user) throws SQLException
+    public synchronized boolean addUser(User user) throws SQLException
     {
         DatabaseManager db = new DatabaseManager();
 
@@ -44,7 +44,7 @@ public class UserRepository {
         return false;
     }
 
-    public String getUser(User user) throws SQLException
+    public synchronized String getUser(User user) throws SQLException
     {
         DatabaseManager db = new DatabaseManager();
         String checkForUserCmd = "SELECT * FROM users WHERE uname = ? AND upw = ?";
@@ -68,7 +68,7 @@ public class UserRepository {
         db.disconnect();
         return "";
     }
-    public void updateCoins(User user) throws SQLException
+    public synchronized void updateCoins(User user) throws SQLException
     {
         int coins = user.getCoins();
         int costs = 5;
@@ -84,7 +84,7 @@ public class UserRepository {
         db.disconnect();
 
     }
-    public boolean editData(User user, UserProperties up) throws SQLException {
+    public synchronized boolean editData(User user, UserProperties up) throws SQLException {
         String changeupCmd = """
                 INSERT INTO UserProperties (user_id, name, bio, image)
                 VALUES (?, ?, ?, ?)
@@ -102,7 +102,7 @@ public class UserRepository {
         db.disconnect();
         return res > 0;
     }
-    public Optional<User> getUserByToken(String token) throws SQLException
+    public synchronized Optional<User> getUserByToken(String token) throws SQLException
     {
         DatabaseManager db = new DatabaseManager();
         db.connect();
@@ -124,7 +124,7 @@ public class UserRepository {
         return Optional.of(user);
     }
 
-    public Optional<UserProperties> getProperties(User user) throws SQLException {
+    public synchronized Optional<UserProperties> getProperties(User user) throws SQLException {
         DatabaseManager db = new DatabaseManager();
         db.connect();
 
@@ -145,5 +145,16 @@ public class UserRepository {
         }
         db.disconnect();
         return Optional.empty();
+    }
+
+    public synchronized boolean removeToken(User user) throws SQLException {
+        String query = "Update users SET token= NULL WHERE uname = ?";
+        DatabaseManager db = new DatabaseManager();
+        db.connect();
+        db.executeUpdate(query,user.getUsername());
+        int res = db.executeUpdate(query,user.getUsername());
+        db.disconnect();
+        return res > 0;
+
     }
 }

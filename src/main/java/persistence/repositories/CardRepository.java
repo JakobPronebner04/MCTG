@@ -25,7 +25,7 @@ public class CardRepository
         return instance;
     }
 
-    public String getCards(User user) throws SQLException {
+    public synchronized String getCards(User user) throws SQLException {
         DatabaseManager db = new DatabaseManager();
         db.connect();
 
@@ -59,7 +59,7 @@ public class CardRepository
         return sb.toString();
     }
 
-    public Optional<Deck> getDeck(User user) throws SQLException {
+    public synchronized Optional<Deck> getDeck(User user) throws SQLException {
         DatabaseManager db = new DatabaseManager();
         db.connect();
 
@@ -101,7 +101,7 @@ public class CardRepository
 
 
 
-    public boolean configureDeck(User user,List<String>card_IDs) throws SQLException {
+    public synchronized boolean configureDeck(User user,List<String>card_IDs) throws SQLException {
         boolean ownsCards = checkCards(user.getId(), card_IDs);
         System.out.println(ownsCards);
        if (ownsCards) {

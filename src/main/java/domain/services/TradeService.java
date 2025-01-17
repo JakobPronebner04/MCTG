@@ -1,5 +1,6 @@
 package domain.services;
 
+import application.exceptions.FailureResponse;
 import domain.enums.TradeState;
 import domain.models.Card;
 import domain.models.Trade;
@@ -35,19 +36,7 @@ public class TradeService {
                 return new HTTPResponse("200","Added your offer!","text/plain");
             return new HTTPResponse("404","Could not add your offer!","text/plain");
         }catch (SQLException | IllegalStateException e) {
-            String status = "500";
-
-            if(e instanceof IllegalStateException)
-            {
-                status = "404";
-            }
-
-            if(e instanceof SQLException)
-            {
-                return new HTTPResponse(status, "DB error","plain/text");
-            }
-
-            return new HTTPResponse(status, e.getMessage(),"plain/text");
+            return FailureResponse.getHTTPException(e);
         }
     }
 
@@ -61,19 +50,7 @@ public class TradeService {
             String tradeOutput = tradeRepository.getTrades();
             return new HTTPResponse("200","All available trades:","text/plain",tradeOutput);
         }catch (SQLException | IllegalStateException e) {
-            String status = "500";
-
-            if(e instanceof IllegalStateException)
-            {
-                status = "404";
-            }
-
-            if(e instanceof SQLException)
-            {
-                return new HTTPResponse(status, "DB error","plain/text");
-            }
-
-            return new HTTPResponse(status, e.getMessage(),"plain/text");
+            return FailureResponse.getHTTPException(e);
         }
     }
 
@@ -98,19 +75,7 @@ public class TradeService {
 
             return new HTTPResponse("200","Trade was successfull! ","text/plain");
         } catch (SQLException | IllegalStateException e) {
-            String status = "500";
-
-            if(e instanceof IllegalStateException)
-            {
-                status = "404";
-            }
-
-            if(e instanceof SQLException)
-            {
-                return new HTTPResponse(status, "DB error","plain/text");
-            }
-
-            return new HTTPResponse(status, e.getMessage(),"plain/text");
+            return FailureResponse.getHTTPException(e);
         }
     }
 
@@ -126,19 +91,7 @@ public class TradeService {
             if(!tradeRepository.removeOffer(user.get(),tradeId)) throw new IllegalStateException("Trade could not be removed!");
             return new HTTPResponse("200","Succesfully removed your offer!","text/plain");
         }catch (SQLException | IllegalStateException e) {
-            String status = "500";
-
-            if(e instanceof IllegalStateException)
-            {
-                status = "404";
-            }
-
-            /*if(e instanceof SQLException)
-            {
-                return new HTTPResponse(status, "DB error","plain/text");
-            }*/
-
-            return new HTTPResponse(status, e.getMessage(),"plain/text");
+            return FailureResponse.getHTTPException(e);
         }
     }
 }

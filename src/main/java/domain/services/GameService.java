@@ -1,5 +1,6 @@
 package domain.services;
 
+import application.exceptions.FailureResponse;
 import presentation.http.HTTPRequest;
 import presentation.http.HTTPResponse;
 import domain.models.Deck;
@@ -39,19 +40,7 @@ public class GameService {
                 return startBattle();
 
             } catch ( SQLException | IllegalStateException | InterruptedException e){
-                String status = "500";
-
-                if(e instanceof IllegalStateException)
-                {
-                    status = "404";
-                }
-
-                if(e instanceof SQLException)
-                {
-                    return new HTTPResponse(status, "DB error","plain/text");
-                }
-
-                return new HTTPResponse(status, e.getMessage(),"plain/text");
+                return FailureResponse.getHTTPException(e);
             }
         }
 
@@ -101,19 +90,7 @@ public class GameService {
             return new HTTPResponse("200", "Current user stats:", "text/plain", statsOutput);
         }
         catch ( SQLException | IllegalStateException e){
-            String status = "500";
-
-            if(e instanceof IllegalStateException)
-            {
-                status = "404";
-            }
-
-            if(e instanceof SQLException)
-            {
-                return new HTTPResponse(status, "DB error","plain/text");
-            }
-
-            return new HTTPResponse(status, e.getMessage(),"plain/text");
+            return FailureResponse.getHTTPException(e);
         }
     }
 
@@ -127,19 +104,7 @@ public class GameService {
             return new HTTPResponse("200", "Highscores", "text/plain", scores);
         }
         catch ( SQLException | IllegalStateException e){
-            String status = "500";
-
-            if(e instanceof IllegalStateException)
-            {
-                status = "404";
-            }
-
-            if(e instanceof SQLException)
-            {
-                return new HTTPResponse(status, "DB error","plain/text");
-            }
-
-            return new HTTPResponse(status, e.getMessage(),"plain/text");
+            return FailureResponse.getHTTPException(e);
         }
     }
 }
