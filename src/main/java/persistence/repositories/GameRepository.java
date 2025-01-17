@@ -186,17 +186,20 @@ public class GameRepository
 
         ResultSet winnerStats = db.executeQuery(getStatsCmd, winner.getId());
         int winnerWins = 0, winnerLosses = 0, winnerElo = 1000;
-
-        winnerWins = winnerStats.getInt("wins");
-        winnerLosses = winnerStats.getInt("losses");
-        winnerElo = winnerStats.getInt("elo");
-
+        if(winnerStats.next())
+        {
+            winnerWins = winnerStats.getInt("wins");
+            winnerLosses = winnerStats.getInt("losses");
+            winnerElo = winnerStats.getInt("elo");
+        }
         ResultSet loserStats = db.executeQuery(getStatsCmd, loser.getId());
         int loserWins = 0, loserLosses = 0, loserElo = 1000;
-
-        loserWins = loserStats.getInt("wins");
-        loserLosses = loserStats.getInt("losses");
-        loserElo = loserStats.getInt("elo");
+        if(loserStats.next())
+        {
+            loserWins = loserStats.getInt("wins");
+            loserLosses = loserStats.getInt("losses");
+            loserElo = loserStats.getInt("elo");
+        }
 
         if(bo.equals(BattleOutcome.DRAW))
         {

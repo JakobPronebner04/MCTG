@@ -87,7 +87,7 @@ public class CardServiceTest {
 
         // Assert
         assertEquals("500", response.getStatus());
-        assertEquals("DB error", response.getStatusMessage());
+        assertEquals("Database error", response.getStatusMessage());
     }
 
     @Test

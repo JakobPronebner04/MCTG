@@ -1,7 +1,6 @@
 package domain.services;
 
 import application.exceptions.FailureResponse;
-import com.fasterxml.jackson.core.JsonProcessingException;
 import presentation.http.HTTPRequest;
 import presentation.http.HTTPResponse;
 import utils.json.JSONParser;

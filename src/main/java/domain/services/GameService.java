@@ -15,10 +15,19 @@ import java.util.concurrent.BlockingQueue;
 import java.util.concurrent.LinkedBlockingQueue;
 
 public class GameService {
+    private final UserRepository userRepository;
+    private final GameRepository gameRepository;
+    private final CardRepository cardRepository;
+
+    public GameService(UserRepository userRepository, GameRepository gameRepository, CardRepository cardRepository) {
+        this.userRepository = userRepository;
+        this.gameRepository = gameRepository;
+        this.cardRepository = cardRepository;
+    }
+
     private final static BlockingQueue<User> lobby = new LinkedBlockingQueue<>(2);
     private final int TIMEOUT = 10;
     public synchronized HTTPResponse battle(HTTPRequest request) {
-        UserRepository userRepository = UserRepository.getInstance();
             try {
                 Optional<User> user = userRepository.getUserByToken(request.getToken());
                 user.orElseThrow(() -> new IllegalStateException("User not found"));
@@ -57,7 +66,6 @@ public class GameService {
             return new HTTPResponse("400", "You can't fight yourself", "text/plain");
         }
 
-        CardRepository cardRepository = CardRepository.getInstance();
         Optional<Deck> deck_user1 = cardRepository.getDeck(user1);
         Optional<Deck> deck_user2 = cardRepository.getDeck(user2);
 
@@ -81,8 +89,6 @@ public class GameService {
     }
 
     public HTTPResponse showStats(HTTPRequest request) {
-        UserRepository userRepository = UserRepository.getInstance();
-        GameRepository gameRepository = GameRepository.getInstance();
         try{
             Optional<User> user = userRepository.getUserByToken(request.getToken());
             user.orElseThrow(() -> new IllegalStateException("User not found"));
@@ -95,8 +101,6 @@ public class GameService {
     }
 
     public HTTPResponse showScoreboard(HTTPRequest req) {
-        UserRepository userRepository = UserRepository.getInstance();
-        GameRepository gameRepository = GameRepository.getInstance();
         try{
             Optional<User> user = userRepository.getUserByToken(req.getToken());
             user.orElseThrow(() -> new IllegalStateException("User not found"));
