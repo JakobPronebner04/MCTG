@@ -2,8 +2,6 @@ package services;
 import domain.services.PackageService;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import org.mockito.Mock;
-import org.mockito.MockitoAnnotations;
 
 import static org.mockito.Mockito.*;
 import static org.junit.jupiter.api.Assertions.*;
@@ -11,14 +9,12 @@ import static org.junit.jupiter.api.Assertions.*;
 import presentation.http.HTTPRequest;
 import presentation.http.HTTPResponse;
 import utils.json.JSONParser;
-import domain.models.Card;
 import domain.models.Package;
 import domain.models.User;
 import persistence.repositories.PackageRepository;
 import persistence.repositories.UserRepository;
 
 import java.sql.SQLException;
-import java.util.List;
 import java.util.Optional;
 
 public class PackageServiceTest {

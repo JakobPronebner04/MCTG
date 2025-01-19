@@ -1,6 +1,8 @@
 package persistence.repositories;
 import domain.enums.TradeState;
-import domain.models.*;
+import domain.models.Card;
+import domain.models.Trade;
+import domain.models.User;
 import persistence.db.DatabaseManager;
 
 import java.sql.ResultSet;
@@ -22,7 +24,7 @@ public class TradeRepository
         }
         return instance;
     }
-    public synchronized boolean addTrade(User user,Trade trade) throws SQLException {
+    public synchronized boolean addTrade(User user, Trade trade) throws SQLException {
         boolean availableCard = checkCardAvailable(user,trade);
         if (availableCard) {
             DatabaseManager db = new DatabaseManager();
@@ -70,7 +72,7 @@ public class TradeRepository
         return Optional.empty();
     }
 
-    public synchronized Optional<Card> getCardToTradeById(User user,String changeCard) throws SQLException {
+    public synchronized Optional<Card> getCardToTradeById(User user, String changeCard) throws SQLException {
         DatabaseManager db = new DatabaseManager();
         db.connect();
         ResultSet result = db.executeQuery("SELECT * FROM usercards WHERE card_id = ? AND user_id = ?",changeCard,user.getId());
