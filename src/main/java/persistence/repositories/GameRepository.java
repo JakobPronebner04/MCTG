@@ -1,5 +1,6 @@
 package persistence.repositories;
 
+import domain.enums.BattleOutcome;
 import persistence.db.DatabaseManager;
 import domain.models.Card;
 import domain.models.Deck;
@@ -38,9 +39,6 @@ public class GameRepository
                 put("Regular", "Water");
         }};
         battleLogger = new StringBuilder();
-    }
-    private enum BattleOutcome {
-        PLAYER1_WIN, PLAYER2_WIN, DRAW
     }
 
     public static GameRepository getInstance() {
@@ -89,18 +87,18 @@ public class GameRepository
 
             if (player1_deck.getSize() == 0) {
                 updateUserStats(u1,u2,result);
-                battleLogger.append(u2.getUsername()).append(" won match against ").append(u1.getUsername()).append("\n");
+                battleLogger.append(u2.getUsername()).append(" won match!").append("\n");
                 return battleLogger.toString();
             }
             if (player2_deck.getSize() == 0) {
                 updateUserStats(u2,u1,result);
-                battleLogger.append(u1.getUsername()).append(" won match against ").append(u2.getUsername());
+                battleLogger.append(u1.getUsername()).append(" won match!").append("\n");
                 return battleLogger.toString();
             }
             round++;
         }
         updateUserStats(u2,u1,BattleOutcome.DRAW);
-        battleLogger.append(u1.getUsername()).append(" draw match against ").append(u2.getUsername());
+        battleLogger.append("draw match").append("\n");
         return battleLogger.toString();
     }
 
@@ -170,7 +168,7 @@ public class GameRepository
 
         return BattleOutcome.DRAW;
     }
-    private void updateUserStats(User loser, User winner,BattleOutcome bo) throws SQLException {
+    public void updateUserStats(User loser, User winner,BattleOutcome bo) throws SQLException {
         String getStatsCmd = """
             SELECT wins, losses, elo FROM userstats WHERE user_id = ?
             """;

@@ -3,9 +3,17 @@
   <database-model serializer="dbm" dbms="POSTGRES" family-id="POSTGRES" format-version="4.53">
     <root id="1">
       <DateStyle>mdy</DateStyle>
-      <IntrospectionStateNumber>2509</IntrospectionStateNumber>
+      <Grants>1||-9223372036854775808|c|G
+1||10|c|G
+1||10|C|G
+1||10|T|G
+4||-9223372036854775808|c|G
+4||10|c|G
+4||10|C|G
+4||10|T|G</Grants>
+      <IntrospectionStateNumber>5404</IntrospectionStateNumber>
       <ServerVersion>17.2</ServerVersion>
-      <StartupTime>1736416324</StartupTime>
+      <StartupTime>1737301932</StartupTime>
       <TimeZones>true ACDT
 true ACSST
 false ACST
@@ -1399,7 +1407,7 @@ false posixrules
 13219||10|C|G
 13219||-9223372036854775808|U|G
 13219||10|U|G</Grants>
-      <IntrospectionStateNumber>2509</IntrospectionStateNumber>
+      <IntrospectionStateNumber>5404</IntrospectionStateNumber>
       <ObjectId>16384</ObjectId>
       <OwnerName>postgres</OwnerName>
     </database>
@@ -4826,8 +4834,8 @@ false posixrules
     <schema id="265" parent="2" name="public">
       <Comment>standard public schema</Comment>
       <Current>1</Current>
-      <IntrospectionStateNumber>2509</IntrospectionStateNumber>
-      <LastIntrospectionLocalTimestamp>2025-01-09.10:01:23</LastIntrospectionLocalTimestamp>
+      <IntrospectionStateNumber>5404</IntrospectionStateNumber>
+      <LastIntrospectionLocalTimestamp>2025-01-19.15:56:24</LastIntrospectionLocalTimestamp>
       <ObjectId>2200</ObjectId>
       <StateNumber>532</StateNumber>
       <OwnerName>pg_database_owner</OwnerName>
@@ -4840,7 +4848,7 @@ false posixrules
     </table>
     <table id="267" parent="265" name="packages">
       <ObjectId>16389</ObjectId>
-      <StateNumber>754</StateNumber>
+      <StateNumber>5403</StateNumber>
       <AccessMethodId>2</AccessMethodId>
       <OwnerName>postgres</OwnerName>
     </table>
@@ -4939,7 +4947,14 @@ false posixrules
       <StoredType>text|0s</StoredType>
       <TypeId>25</TypeId>
     </column>
-    <index id="282" parent="267" name="packages_pkey">
+    <column id="282" parent="267" name="created_at">
+      <DefaultExpression>CURRENT_TIMESTAMP</DefaultExpression>
+      <Position>2</Position>
+      <StateNumber>5403</StateNumber>
+      <StoredType>timestamp|0s</StoredType>
+      <TypeId>1114</TypeId>
+    </column>
+    <index id="283" parent="267" name="packages_pkey">
       <ColNames>package_id</ColNames>
       <NameSurrogate>1</NameSurrogate>
       <ObjectId>16394</ObjectId>
@@ -4951,43 +4966,42 @@ false posixrules
       <CollationIds>100</CollationIds>
       <CollationParentNames>pg_catalog</CollationParentNames>
     </index>
-    <key id="283" parent="267" name="packages_pkey">
+    <key id="284" parent="267" name="packages_pkey">
       <NameSurrogate>1</NameSurrogate>
       <ObjectId>16395</ObjectId>
       <Primary>1</Primary>
       <StateNumber>753</StateNumber>
       <UnderlyingIndexId>16394</UnderlyingIndexId>
     </key>
-    <column id="284" parent="268" name="id">
+    <column id="285" parent="268" name="id">
       <NotNull>1</NotNull>
       <Position>1</Position>
       <StateNumber>2505</StateNumber>
       <StoredType>text|0s</StoredType>
       <TypeId>25</TypeId>
     </column>
-    <column id="285" parent="268" name="cardtotrade">
+    <column id="286" parent="268" name="cardtotrade">
       <NotNull>1</NotNull>
       <Position>2</Position>
       <StateNumber>2505</StateNumber>
       <StoredType>text|0s</StoredType>
       <TypeId>25</TypeId>
     </column>
-    <column id="286" parent="268" name="type">
+    <column id="287" parent="268" name="type">
       <NotNull>1</NotNull>
       <Position>3</Position>
       <StateNumber>2505</StateNumber>
       <StoredType>text|0s</StoredType>
       <TypeId>25</TypeId>
     </column>
-    <column id="287" parent="268" name="minimumdamage">
+    <column id="288" parent="268" name="minimumdamage">
       <Position>4</Position>
       <StateNumber>2505</StateNumber>
       <StoredType>double precision|0s</StoredType>
       <TypeId>701</TypeId>
     </column>
-    <index id="288" parent="268" name="table_name_pkey">
+    <index id="289" parent="268" name="table_name_pkey">
       <ColNames>id</ColNames>
-      <NameSurrogate>1</NameSurrogate>
       <ObjectId>57354</ObjectId>
       <Primary>1</Primary>
       <StateNumber>2505</StateNumber>
@@ -4997,41 +5011,41 @@ false posixrules
       <CollationIds>100</CollationIds>
       <CollationParentNames>pg_catalog</CollationParentNames>
     </index>
-    <key id="289" parent="268" name="table_name_pkey">
+    <key id="290" parent="268" name="table_name_pkey">
       <ObjectId>57355</ObjectId>
       <Primary>1</Primary>
       <StateNumber>2505</StateNumber>
       <UnderlyingIndexId>57354</UnderlyingIndexId>
     </key>
-    <column id="290" parent="269" name="card_id">
+    <column id="291" parent="269" name="card_id">
       <NotNull>1</NotNull>
       <Position>1</Position>
       <StateNumber>793</StateNumber>
       <StoredType>text|0s</StoredType>
       <TypeId>25</TypeId>
     </column>
-    <column id="291" parent="269" name="user_id">
+    <column id="292" parent="269" name="user_id">
       <NotNull>1</NotNull>
       <Position>2</Position>
       <StateNumber>1045</StateNumber>
       <StoredType>text|0s</StoredType>
       <TypeId>25</TypeId>
     </column>
-    <column id="292" parent="269" name="name">
+    <column id="293" parent="269" name="name">
       <NotNull>1</NotNull>
       <Position>3</Position>
       <StateNumber>793</StateNumber>
       <StoredType>text|0s</StoredType>
       <TypeId>25</TypeId>
     </column>
-    <column id="293" parent="269" name="damage">
+    <column id="294" parent="269" name="damage">
       <NotNull>1</NotNull>
       <Position>4</Position>
       <StateNumber>793</StateNumber>
       <StoredType>numeric(10,2 digit)|0s</StoredType>
       <TypeId>1700</TypeId>
     </column>
-    <index id="294" parent="269" name="usercards_pkey">
+    <index id="295" parent="269" name="usercards_pkey">
       <ColNames>card_id</ColNames>
       <NameSurrogate>1</NameSurrogate>
       <ObjectId>24605</ObjectId>
@@ -5043,49 +5057,49 @@ false posixrules
       <CollationIds>100</CollationIds>
       <CollationParentNames>pg_catalog</CollationParentNames>
     </index>
-    <key id="295" parent="269" name="usercards_pkey">
+    <key id="296" parent="269" name="usercards_pkey">
       <NameSurrogate>1</NameSurrogate>
       <ObjectId>24606</ObjectId>
       <Primary>1</Primary>
       <StateNumber>793</StateNumber>
       <UnderlyingIndexId>24605</UnderlyingIndexId>
     </key>
-    <column id="296" parent="270" name="user_id">
+    <column id="297" parent="270" name="user_id">
       <NotNull>1</NotNull>
       <Position>1</Position>
       <StateNumber>1102</StateNumber>
       <StoredType>varchar(255)|0s</StoredType>
       <TypeId>1043</TypeId>
     </column>
-    <column id="297" parent="270" name="card_id1">
+    <column id="298" parent="270" name="card_id1">
       <NotNull>1</NotNull>
       <Position>2</Position>
       <StateNumber>1102</StateNumber>
       <StoredType>text|0s</StoredType>
       <TypeId>25</TypeId>
     </column>
-    <column id="298" parent="270" name="card_id2">
+    <column id="299" parent="270" name="card_id2">
       <NotNull>1</NotNull>
       <Position>3</Position>
       <StateNumber>1102</StateNumber>
       <StoredType>text|0s</StoredType>
       <TypeId>25</TypeId>
     </column>
-    <column id="299" parent="270" name="card_id3">
+    <column id="300" parent="270" name="card_id3">
       <NotNull>1</NotNull>
       <Position>4</Position>
       <StateNumber>1102</StateNumber>
       <StoredType>text|0s</StoredType>
       <TypeId>25</TypeId>
     </column>
-    <column id="300" parent="270" name="card_id4">
+    <column id="301" parent="270" name="card_id4">
       <NotNull>1</NotNull>
       <Position>5</Position>
       <StateNumber>1102</StateNumber>
       <StoredType>text|0s</StoredType>
       <TypeId>25</TypeId>
     </column>
-    <foreign-key id="301" parent="270" name="userdecks_user_id_fkey">
+    <foreign-key id="302" parent="270" name="userdecks_user_id_fkey">
       <ColNames>user_id</ColNames>
       <NameSurrogate>1</NameSurrogate>
       <ObjectId>32792</ObjectId>
@@ -5094,7 +5108,7 @@ false posixrules
       <RefKeyColPositions>1</RefKeyColPositions>
       <RefTableId>24581</RefTableId>
     </foreign-key>
-    <index id="302" parent="270" name="userdecks_pkey">
+    <index id="303" parent="270" name="userdecks_pkey">
       <ColNames>user_id</ColNames>
       <NameSurrogate>1</NameSurrogate>
       <ObjectId>32790</ObjectId>
@@ -5106,39 +5120,39 @@ false posixrules
       <CollationIds>100</CollationIds>
       <CollationParentNames>pg_catalog</CollationParentNames>
     </index>
-    <key id="303" parent="270" name="userdecks_pkey">
+    <key id="304" parent="270" name="userdecks_pkey">
       <NameSurrogate>1</NameSurrogate>
       <ObjectId>32791</ObjectId>
       <Primary>1</Primary>
       <StateNumber>1102</StateNumber>
       <UnderlyingIndexId>32790</UnderlyingIndexId>
     </key>
-    <column id="304" parent="271" name="user_id">
+    <column id="305" parent="271" name="user_id">
       <NotNull>1</NotNull>
       <Position>1</Position>
       <StateNumber>1128</StateNumber>
       <StoredType>varchar(255)|0s</StoredType>
       <TypeId>1043</TypeId>
     </column>
-    <column id="305" parent="271" name="name">
+    <column id="306" parent="271" name="name">
       <Position>2</Position>
       <StateNumber>1128</StateNumber>
       <StoredType>varchar(255)|0s</StoredType>
       <TypeId>1043</TypeId>
     </column>
-    <column id="306" parent="271" name="bio">
+    <column id="307" parent="271" name="bio">
       <Position>3</Position>
       <StateNumber>1128</StateNumber>
       <StoredType>text|0s</StoredType>
       <TypeId>25</TypeId>
     </column>
-    <column id="307" parent="271" name="image">
+    <column id="308" parent="271" name="image">
       <Position>4</Position>
       <StateNumber>1128</StateNumber>
       <StoredType>text|0s</StoredType>
       <TypeId>25</TypeId>
     </column>
-    <foreign-key id="308" parent="271" name="fk_user">
+    <foreign-key id="309" parent="271" name="fk_user">
       <ColNames>user_id</ColNames>
       <ObjectId>40972</ObjectId>
       <OnDelete>cascade</OnDelete>
@@ -5146,7 +5160,7 @@ false posixrules
       <RefKeyColPositions>1</RefKeyColPositions>
       <RefTableId>24581</RefTableId>
     </foreign-key>
-    <index id="309" parent="271" name="userproperties_pkey">
+    <index id="310" parent="271" name="userproperties_pkey">
       <ColNames>user_id</ColNames>
       <NameSurrogate>1</NameSurrogate>
       <ObjectId>40970</ObjectId>
@@ -5158,48 +5172,48 @@ false posixrules
       <CollationIds>100</CollationIds>
       <CollationParentNames>pg_catalog</CollationParentNames>
     </index>
-    <key id="310" parent="271" name="userproperties_pkey">
+    <key id="311" parent="271" name="userproperties_pkey">
       <NameSurrogate>1</NameSurrogate>
       <ObjectId>40971</ObjectId>
       <Primary>1</Primary>
       <StateNumber>1128</StateNumber>
       <UnderlyingIndexId>40970</UnderlyingIndexId>
     </key>
-    <column id="311" parent="272" name="user_id">
+    <column id="312" parent="272" name="user_id">
       <NotNull>1</NotNull>
       <Position>1</Position>
       <StateNumber>774</StateNumber>
       <StoredType>text|0s</StoredType>
       <TypeId>25</TypeId>
     </column>
-    <column id="312" parent="272" name="uname">
+    <column id="313" parent="272" name="uname">
       <NotNull>1</NotNull>
       <Position>2</Position>
       <StateNumber>774</StateNumber>
       <StoredType>varchar(50)|0s</StoredType>
       <TypeId>1043</TypeId>
     </column>
-    <column id="313" parent="272" name="upw">
+    <column id="314" parent="272" name="upw">
       <NotNull>1</NotNull>
       <Position>3</Position>
       <StateNumber>774</StateNumber>
       <StoredType>varchar(255)|0s</StoredType>
       <TypeId>1043</TypeId>
     </column>
-    <column id="314" parent="272" name="coins">
+    <column id="315" parent="272" name="coins">
       <DefaultExpression>0</DefaultExpression>
       <Position>4</Position>
       <StateNumber>774</StateNumber>
       <StoredType>integer|0s</StoredType>
       <TypeId>23</TypeId>
     </column>
-    <column id="315" parent="272" name="token">
+    <column id="316" parent="272" name="token">
       <Position>5</Position>
       <StateNumber>774</StateNumber>
       <StoredType>text|0s</StoredType>
       <TypeId>25</TypeId>
     </column>
-    <index id="316" parent="272" name="users_pkey">
+    <index id="317" parent="272" name="users_pkey">
       <ColNames>user_id</ColNames>
       <NameSurrogate>1</NameSurrogate>
       <ObjectId>24587</ObjectId>
@@ -5211,7 +5225,7 @@ false posixrules
       <CollationIds>100</CollationIds>
       <CollationParentNames>pg_catalog</CollationParentNames>
     </index>
-    <index id="317" parent="272" name="users_uname_key">
+    <index id="318" parent="272" name="users_uname_key">
       <ColNames>uname</ColNames>
       <NameSurrogate>1</NameSurrogate>
       <ObjectId>24589</ObjectId>
@@ -5222,48 +5236,48 @@ false posixrules
       <CollationIds>100</CollationIds>
       <CollationParentNames>pg_catalog</CollationParentNames>
     </index>
-    <key id="318" parent="272" name="users_pkey">
+    <key id="319" parent="272" name="users_pkey">
       <NameSurrogate>1</NameSurrogate>
       <ObjectId>24588</ObjectId>
       <Primary>1</Primary>
       <StateNumber>774</StateNumber>
       <UnderlyingIndexId>24587</UnderlyingIndexId>
     </key>
-    <key id="319" parent="272" name="users_uname_key">
+    <key id="320" parent="272" name="users_uname_key">
       <NameSurrogate>1</NameSurrogate>
       <ObjectId>24590</ObjectId>
       <StateNumber>774</StateNumber>
       <UnderlyingIndexId>24589</UnderlyingIndexId>
     </key>
-    <column id="320" parent="273" name="user_id">
+    <column id="321" parent="273" name="user_id">
       <NotNull>1</NotNull>
       <Position>1</Position>
       <StateNumber>1353</StateNumber>
       <StoredType>text|0s</StoredType>
       <TypeId>25</TypeId>
     </column>
-    <column id="321" parent="273" name="wins">
+    <column id="322" parent="273" name="wins">
       <DefaultExpression>0</DefaultExpression>
       <Position>2</Position>
       <StateNumber>1353</StateNumber>
       <StoredType>integer|0s</StoredType>
       <TypeId>23</TypeId>
     </column>
-    <column id="322" parent="273" name="losses">
+    <column id="323" parent="273" name="losses">
       <DefaultExpression>0</DefaultExpression>
       <Position>3</Position>
       <StateNumber>1353</StateNumber>
       <StoredType>integer|0s</StoredType>
       <TypeId>23</TypeId>
     </column>
-    <column id="323" parent="273" name="elo">
+    <column id="324" parent="273" name="elo">
       <DefaultExpression>0</DefaultExpression>
       <Position>4</Position>
       <StateNumber>1353</StateNumber>
       <StoredType>integer|0s</StoredType>
       <TypeId>23</TypeId>
     </column>
-    <foreign-key id="324" parent="273" name="userstats_user_id_fkey">
+    <foreign-key id="325" parent="273" name="userstats_user_id_fkey">
       <ColNames>user_id</ColNames>
       <NameSurrogate>1</NameSurrogate>
       <ObjectId>49167</ObjectId>
@@ -5272,7 +5286,7 @@ false posixrules
       <RefKeyColPositions>1</RefKeyColPositions>
       <RefTableId>24581</RefTableId>
     </foreign-key>
-    <index id="325" parent="273" name="userstats_pkey">
+    <index id="326" parent="273" name="userstats_pkey">
       <ColNames>user_id</ColNames>
       <NameSurrogate>1</NameSurrogate>
       <ObjectId>49165</ObjectId>
@@ -5284,7 +5298,7 @@ false posixrules
       <CollationIds>100</CollationIds>
       <CollationParentNames>pg_catalog</CollationParentNames>
     </index>
-    <key id="326" parent="273" name="userstats_pkey">
+    <key id="327" parent="273" name="userstats_pkey">
       <NameSurrogate>1</NameSurrogate>
       <ObjectId>49166</ObjectId>
       <Primary>1</Primary>

@@ -59,7 +59,7 @@ public class PackageRepository
         String getFirstPackageIdCmd = """
                 SELECT package_id\s
                 FROM Packages\s
-                ORDER BY package_id ASC\s
+                ORDER BY created_at ASC\s
                 LIMIT 1;
                 """;
         ResultSet res = db.executeQuery(getFirstPackageIdCmd);

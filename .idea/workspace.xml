@@ -4,25 +4,18 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="dad0ab66-a947-4306-b1c4-5958864e97eb" name="Changes" comment="">
+    <list default="true" id="dad0ab66-a947-4306-b1c4-5958864e97eb" name="Changes" comment="updated battlelogic and added Service tests">
+      <change afterPath="$PROJECT_DIR$/src/main/java/domain/enums/BattleOutcome.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/tests/repositories/GameRepositoryTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/2faf87bc-eb51-4b0a-9405-8dcac01bda70.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/2faf87bc-eb51-4b0a-9405-8dcac01bda70.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/2faf87bc-eb51-4b0a-9405-8dcac01bda70/storage_v2/_src_/database/mctg.iQ4zAA/schema/public.abK9xQ.meta" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/2faf87bc-eb51-4b0a-9405-8dcac01bda70/storage_v2/_src_/database/mctg.iQ4zAA/schema/public.abK9xQ.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/logs/mctg.log" beforeDir="false" afterPath="$PROJECT_DIR$/logs/mctg.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/application/handlers/GameHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/application/handlers/GameHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/application/handlers/ScoreboardHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/application/handlers/ScoreboardHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/domain/services/DeckService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/domain/services/DeckService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/domain/services/GameService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/domain/services/GameService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/domain/services/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/domain/services/UserService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/projectInfo.txt" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/persistence/repositories/GameRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/persistence/repositories/GameRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/persistence/repositories/PackageRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/persistence/repositories/PackageRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/tests/services/CardServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/tests/services/CardServiceTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/application/handlers/GameHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application/handlers/GameHandler.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/application/handlers/ScoreboardHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application/handlers/ScoreboardHandler.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/domain/services/DeckService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/domain/services/DeckService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/domain/services/GameService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/domain/services/GameService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/domain/services/UserService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/domain/services/UserService.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/persistence/repositories/GameRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/persistence/repositories/GameRepository.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/persistence/repositories/PackageRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/persistence/repositories/PackageRepository.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/services/CardServiceTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/services/CardServiceTest.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -35,8 +28,8 @@
         <option value="Interface" />
         <option value="JUnit4 Test Class" />
         <option value="Exception" />
-        <option value="Enum" />
         <option value="Class" />
+        <option value="Enum" />
       </list>
     </option>
   </component>
@@ -83,51 +76,53 @@
     <option name="sortByType" value="true" />
     <option name="sortKey" value="BY_TYPE" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Application.Main.executor&quot;: &quot;Run&quot;,
-    &quot;Downloaded.Files.Path.Enabled&quot;: &quot;false&quot;,
-    &quot;JUnit.AddPackageTest.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.AddPackageTest.testAddPackage_Success.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.CardServiceTest.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.DeckServiceTest.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.PackageServiceTest.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.UserServiceTest.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.UserServiceTest.testLogin_Failure_UserNotFound.executor&quot;: &quot;Debug&quot;,
-    &quot;JUnit.services in MCTG.executor&quot;: &quot;Run&quot;,
-    &quot;Repository.Attach.Annotations&quot;: &quot;false&quot;,
-    &quot;Repository.Attach.JavaDocs&quot;: &quot;false&quot;,
-    &quot;Repository.Attach.Sources&quot;: &quot;false&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary&quot;: &quot;JUnit4&quot;,
-    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit4&quot;: &quot;&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_directory_selection&quot;: &quot;C:/FH/Java/MCTG/src/test/java/services&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/FH/Java/MCTG&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;onboarding.tips.debug.path&quot;: &quot;C:/Users/Jakob Pronebner/IdeaProjects/MCTG/src/main/java/Main.java&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;project.scopes&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Application.Main.executor": "Run",
+    "Downloaded.Files.Path.Enabled": "false",
+    "JUnit.AddPackageTest.executor": "Run",
+    "JUnit.AddPackageTest.testAddPackage_Success.executor": "Run",
+    "JUnit.All in MCTG.executor": "Run",
+    "JUnit.CardServiceTest.executor": "Run",
+    "JUnit.DeckServiceTest.executor": "Run",
+    "JUnit.GameRepositoryTest.executor": "Run",
+    "JUnit.PackageServiceTest.executor": "Run",
+    "JUnit.UserServiceTest.executor": "Run",
+    "JUnit.UserServiceTest.testLogin_Failure_UserNotFound.executor": "Debug",
+    "JUnit.services in MCTG.executor": "Run",
+    "Repository.Attach.Annotations": "false",
+    "Repository.Attach.JavaDocs": "false",
+    "Repository.Attach.Sources": "false",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit4",
+    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit4": "",
+    "git-widget-placeholder": "main",
+    "ignore.virus.scanning.warn.message": "true",
+    "kotlin-language-version-configured": "true",
+    "last_directory_selection": "C:/FH/Java/MCTG/src/test/java/services",
+    "last_opened_file_path": "C:/FH/Java/MCTG",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "onboarding.tips.debug.path": "C:/Users/Jakob Pronebner/IdeaProjects/MCTG/src/main/java/Main.java",
+    "project.structure.last.edited": "Project",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "project.scopes",
+    "vue.rearranger.settings.migration": "true"
   },
-  &quot;keyToStringList&quot;: {
-    &quot;DatabaseDriversLRU&quot;: [
-      &quot;postgresql&quot;
+  "keyToStringList": {
+    "DatabaseDriversLRU": [
+      "postgresql"
     ]
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
       <recent name="handlers" />
@@ -143,18 +138,11 @@
       <recent name="main" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.services in MCTG">
-    <configuration name="CardServiceTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+  <component name="RunManager">
+    <configuration name="All in MCTG" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="MCTG" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="services.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="services" />
-      <option name="MAIN_CLASS_NAME" value="services.CardServiceTest" />
-      <option name="TEST_OBJECT" value="class" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="TEST_OBJECT" value="package" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -174,16 +162,16 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="PackageServiceTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="GameRepositoryTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="MCTG" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="services.*" />
+          <option name="PATTERN" value="repositories.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="services" />
-      <option name="MAIN_CLASS_NAME" value="services.PackageServiceTest" />
+      <option name="PACKAGE_NAME" value="repositories" />
+      <option name="MAIN_CLASS_NAME" value="repositories.GameRepositoryTest" />
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -220,11 +208,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.All in MCTG" />
+        <item itemvalue="JUnit.GameRepositoryTest" />
         <item itemvalue="JUnit.services in MCTG" />
         <item itemvalue="JUnit.DeckServiceTest" />
         <item itemvalue="JUnit.UserServiceTest" />
-        <item itemvalue="JUnit.PackageServiceTest" />
-        <item itemvalue="JUnit.CardServiceTest" />
       </list>
     </recent_temporary>
   </component>
@@ -366,7 +354,10 @@
       <workItem from="1737074014506" duration="769000" />
       <workItem from="1737147799267" duration="692000" />
       <workItem from="1737148539813" duration="232000" />
-      <workItem from="1737151163944" duration="23000" />
+      <workItem from="1737151163944" duration="1427000" />
+      <workItem from="1737206004673" duration="2079000" />
+      <workItem from="1737210528191" duration="1523000" />
+      <workItem from="1737297688259" duration="4867000" />
     </task>
     <task id="LOCAL-00001" summary="changed jackson dependencie">
       <option name="closed" value="true" />
@@ -448,7 +439,15 @@
       <option name="project" value="LOCAL" />
       <updated>1737074073196</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="updated battlelogic and added Service tests">
+      <option name="closed" value="true" />
+      <created>1737151233243</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1737151233243</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -494,7 +493,8 @@
     <MESSAGE value="updated" />
     <MESSAGE value="updated battleLogic and tradeLogic" />
     <MESSAGE value="updatet battleLogic and added FailureResponse thrower" />
-    <option name="LAST_COMMIT_MESSAGE" value="updatet battleLogic and added FailureResponse thrower" />
+    <MESSAGE value="updated battlelogic and added Service tests" />
+    <option name="LAST_COMMIT_MESSAGE" value="updated battlelogic and added Service tests" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
