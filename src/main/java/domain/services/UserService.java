@@ -125,7 +125,6 @@ public class UserService
     private Optional<UserProperties> getBodyAsProperties(HTTPRequest req)
     {
         JSONParser parser = new JSONParser();
-        System.out.println(req.getBody());
         UserProperties up = parser.readValue(req.getBody(), UserProperties.class);
         if(up == null) return Optional.empty();
         return Optional.of(up);

@@ -103,7 +103,6 @@ public class CardRepository
 
     public synchronized boolean configureDeck(User user,List<String>card_IDs) throws SQLException {
         boolean ownsCards = checkCards(user.getId(), card_IDs);
-        System.out.println(ownsCards);
        if (ownsCards) {
             String configureDeckCmd = "INSERT INTO userdecks (user_id, card_id1, card_id2, card_id3, card_id4) VALUES (?, ?, ?, ?, ?) " +
                     "ON CONFLICT (user_id) DO UPDATE SET " +
